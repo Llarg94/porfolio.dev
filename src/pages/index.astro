@@ -12,6 +12,8 @@ import Experience from '../components/Experience.astro';
 import Briefcase from '../icons/Briefcase.astro';
 import CodeIcon from '../icons/Code.astro';
 import Projects from '../components/Projects.astro';
+import Sknadstekst from '../icons/Søknadstekst.astro';
+import Cv from '../icons/CV.astro';
 ---
 
 <Layout 
@@ -21,29 +23,29 @@ description="Contrata a Albert para crear tu app web o móvil. Desarrolador Web 
 	<main class="px-4">
 		<SectionContainer class="py-44 pb-32">
 			<img 
-				class= "rounded-full size-12 mb-4"
-				src="albs-photo.jpg" 
+				class= "rounded-full size-16 mb-2"
+				src="/public/albs-photo.jpg" 
 				alt="albs photo"
         	/>
 			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
-				Hola, soy Albert 
+				Hey, I am Albert 
 				<a 
 				  href="https://www.linkedin.com/in/albert-llargu%C3%A9s/" 
 				  target="_blank" 
 				  rel="noopener" 
 				  class="flex justify-center items-center"
 				>
-				  <Badge>Disponible para trabajar</Badge>
+				  <Badge>Ready to work</Badge>
 				</a>
 			</h1>
-			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-				<span>+2 años de experiencia.</span> 
-				<span class="text-yellow-200/90 ">Desarrollador Web y de aplicaciones.</span> 
-				<span class="text-red-200/90">De Barcelona, España.</span>
-				<span class="opacity-85">Especializado en crear aplicaciones diferentes.</span> 
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[750px]">
+				<span>Junior IT profile.</span> 
+				<span class="text-yellow-200/90 ">Web and App developer.</span> 
+				<span class="text-red-200/90">From Barcelona, Spain 🌍.</span>
+				<span class="opacity-85">Focused on building different apps.</span> 
 			</h2>
 
-			<nav class="flex gap-4 mt-8 flex-wrap">
+			<nav class="flex gap-3 mt-3 flex-wrap">
 				<SocialPill href="https://www.linkedin.com/in/albert-llargu%C3%A9s/">
 					<LinkedInIcon class="size-4 lg:size-6"/>
 					LinkedIn
@@ -56,13 +58,21 @@ description="Contrata a Albert para crear tu app web o móvil. Desarrolador Web 
 					<GmailIcon class="size-4 lg:size-6"/>
 					albertllarg1@gmail.com
 				</SocialPill>
+				<SocialPill href="/Updated CV - Albert.pdf" download>
+					<Cv class="size-4 lg:size-6"/>
+					CV
+				</SocialPill>
+				<SocialPill href="mailto:albertllarg1@gmail.com">
+					<Sknadstekst class="size-4 lg:size-6"/>
+					Søknadstekst
+				</SocialPill>
 			</nav>	
 		</SectionContainer>
 
 		<SectionContainer id="experiencia">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
 				<Briefcase class="size-7"/>
-				Experiencia laboral
+				Work experience
 			</h2>
 			<Experience />
 		</SectionContainer>
@@ -70,7 +80,7 @@ description="Contrata a Albert para crear tu app web o móvil. Desarrolador Web 
 		<SectionContainer id="proyectos">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
 				<CodeIcon class="size-7"/>
-				Proyectos
+				Projects
 			</h2>
 			<Projects />
 		</SectionContainer>

@@ -29,9 +29,9 @@ const TAGS = {
 
 const PROJECTS = [
     {
-        title: 'App de clima Interactiva',
+        title: 'Interactive Weather App',
         description: 
-        "La App de Clima Interactiva es una aplicación web que permite a los usuarios consultar el clima de diversas ciudades en tiempo real. El proyecto se compone de un frontend desarrollado en HTML, CSS y JavaScript, y un backend construido con Node.js y Express. ",
+        "The Interactive Weather App is a web application that allows users to check the weather of various cities in real-time. The project consists of a frontend developed in HTML, CSS, and JavaScript, and a backend built with Node.js and Express.",
         github: 'https://github.com/Llarg94/App-clima',
         image: '/projects/appClima.png',
         tags: [TAGS.NODE, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT]
@@ -47,7 +47,7 @@ const PROJECTS = [
             <ul class="flex gap-x-2 flex-row">
                 {tags.map((tag) => (
                     <li>
-                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-2`}>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-4`}>
                             <tag.icon class="size-4"/>
                             {tag.name}
                         </span>
