@@ -3,6 +3,10 @@ import HTML from "../icons/HTML.astro"
 import NodeJS from "../icons/Node.astro"
 import CSS from "../icons/CSS.astro"
 import JAVASCRIPT from "../icons/JavaScript.astro"
+import AWS from "../icons/AWS.astro"
+import JAVA from "../icons/Java.astro"
+import ANDROID from "../icons/Android.astro"
+import KOTLIN from "../icons/Kotlin.astro"
 
 const TAGS = {
     NODE:{
@@ -12,7 +16,7 @@ const TAGS = {
     },
     HTML:{
         name: 'HTML',
-        class: 'bg-white text-[#73bcf6]',
+        class: 'bg-black text-white',
         icon: HTML,
     },
     CSS:{
@@ -24,7 +28,29 @@ const TAGS = {
         name: 'JAVASCRIPT',
         class: 'bg-black text-white',
         icon: JAVASCRIPT,     
-    }
+    },
+    AWS:{
+        name: 'AWS',
+        class: 'bg-black text-white',
+        icon: AWS,     
+    },
+    JAVA:{
+        name: 'JAVA',
+        class: 'bg-black text-white',
+        icon: JAVA,     
+    },
+    ANDROID:{
+        name: 'ANDROID',
+        class: 'bg-black text-white',
+        icon: ANDROID,     
+    },
+    KOTLIN:{
+        name: 'Kotlin',
+        class: 'bg-black text-white',
+        icon: KOTLIN,     
+    },
+
+
 }
 
 const PROJECTS = [
@@ -33,9 +59,26 @@ const PROJECTS = [
         description: 
         "The Interactive Weather App is a web application that allows users to check the weather of various cities in real-time. The project consists of a frontend developed in HTML, CSS, and JavaScript, and a backend built with Node.js and Express. The App is connected to an OpenSource API called OpenWeatherMap.",
         github: 'https://github.com/Llarg94/App-clima',
-        image: '/appclima.webp',
+        image: '/public/projects/appclima.webp',
         tags: [TAGS.NODE, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT]
-    }
+    },
+    {
+        title: 'LibGDX 2D',
+        description: 
+        "I developed a 2D video game using LibGDX and Kotlin in Android Studio. The game features stylized graphics, smooth controls, and dynamic gameplay mechanics, allowing for interactions such as moving up and down, and shooting. It includes one main level with progressive challenges, as well as sound effects and background music. The game is designed to be simple and fun, providing an engaging an accessible experience for all players.",
+        github: 'https://github.com/Llarg94/2Dgame',
+        image: '/public/projects/',
+        tags: [TAGS.AWS, TAGS.JAVA, TAGS.ANDROID]
+    },
+    {
+        title: 'PuntualApp',
+        description: 
+        "PuntualApp is an Android app developed in Java designed for online employee attendance tracking. It registers employees' real-time location using the Google API during clock-in and clock-out. The app features a secure login authentication system powered by AWS Amplify and Cognito. Additionally, it connects to a backend hosted on an AWS EC2 server, utilizing PHP to communicate with a MySQL database. The server is equipped with phpMyAdmin for streamlined database management and interaction. Final degree project",
+        github: 'https://github.com/Llarg94/PuntualApp',
+        image: '/public/projects/...',
+        tags: [TAGS.KOTLIN, TAGS.JAVA, TAGS.AWS, TAGS.ANDROID]
+    },
+
 ]
 ---
 
