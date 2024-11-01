@@ -1,3 +1,4 @@
 # Porfolio de Albs 
 
-![{216C23E9-6A9B-451A-A1F8-C452096212F2}](https://github.com/user-attachments/assets/c2330bdd-247f-4c68-8998-bdc71cd542b6)
+![{16139161-4AE6-4322-A07A-6165FDF95D29}](https://github.com/user-attachments/assets/90a3d399-76c1-4350-a1f8-a3b5954f54f0)
+
