@@ -1,0 +1,60 @@
+---
+const personalImageAlt = "Albert Llargués"
+import Badge from "../components/Badge.astro"
+import LinkedInIcon from "../icons/LinkedIn.astro"
+import SocialPill from "../components/SocialPill.astro"
+import CV from "../icons/CV.astro"
+import Sknadstekst from "../icons/Søknadstekst.astro"
+import GitHubIcon from "../icons/GitHub.astro"
+import GmailIcon from "../icons/Gmail.astro"
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-16"
+      src="/dist/projects/albs-foto.webp"
+      alt={personalImageAlt}
+    />
+    <a
+      href="https://www.linkedin.com/in/albert-llargues"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+        <Badge>Ready to work</Badge>
+    </a>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    Hey, I am Albert
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300">
+    Junior IT developer. <strong>Web & App Creator.</strong> from Barcelona, Spain 🌍. Focused on creating apps that make a difference. Transitioning from logistics to IT.
+  </p>
+
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="https://www.linkedin.com/in/albert-llargues">
+        <LinkedInIcon class="size-4 lg:size-6"/>
+        LinkedIn
+    </SocialPill>
+    <SocialPill href="https://www.github.com/Llarg94">
+        <GitHubIcon class="size-4 lg:size-6"/>
+        GitHub 
+    </SocialPill>
+    <SocialPill href="mailto:albertllarg1@gmail.com">
+        <GmailIcon class="size-4 lg:size-6"/>
+        albertllarg1@gmail.com
+    </SocialPill>
+    <SocialPill href="/dist/projects/Updated CV-Albert Llargues.pdf">
+        <CV class="size-4 lg:size-6"/>
+        CV
+    </SocialPill>
+    <SocialPill href="/dist/projects/MOTIVATION-LETTER.pdf">
+        <Sknadstekst class="size-4 lg:size-6"/>
+        Søknadstekst
+    </SocialPill>
+  </nav>
+</div>

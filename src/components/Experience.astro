@@ -3,15 +3,15 @@ import ExperienceItem from "./ExperienceItem.astro"
 const EXPERIENCE = [
   {
     date: "Current position",
-  title: "Warehouse Operative – Autronica Fire and Security AS",
-  company: "Autronica",
+  title: "Warehouse Operative",
+  company: "Autronica Fire and Secutiry AS",
   description:
     "Preparing national and international orders in the warehouse, packaging them appropriately, labeling them, and preparing them for transport.",
   link: "https://www.autronicafire.com/en/",
 },
 {
   date: "December 2021 - February 2024",
-  title: "Operations Technician – Cencora",
+  title: "Operations Technician",
   company: "Cencora - World Courier",
   description:
     "Handling transportation and customs operations for international import and export shipments of pharmaceutical and research products.",
@@ -19,7 +19,7 @@ const EXPERIENCE = [
   },
 {
   date: "March 2021 - November 2021",
-  title: "Intermodal dept – CMA-CGM",
+  title: "Intermodal dept",
   company: "CMA CGM",
   description:
     "Traffic technician carrying out tasks of moving maritime containers nationwide. Reservation and hiring of vehicles. Managing and booking box trucks, dump trucks and platform trucks and",
@@ -28,18 +28,18 @@ const EXPERIENCE = [
 {
   date: "April 2014 - March 2021",
   title: "",
-  company: "CMA CGM",
+  company: "",
   description:
-    "More info available on my CV...",
-  link: "", 
+    "More info available on my CV. Click to show.",
+  link: "/public/projects/Updated CV-Albert Llargues.pdf", 
   }
 ]
 ---
 
-<ol class="relative border-s border-gray-200 ml-3">
+<ol class="relative mt-16">
   {
     EXPERIENCE.map((experience) => (
-      <li class="mb-10 ms-4">
+      <li class="">
         <ExperienceItem {...experience} />
       </li>
     ))
