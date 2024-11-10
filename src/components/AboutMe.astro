@@ -1,25 +1,66 @@
 ---
+function toggleCard() {
+throw new Error("Function not implemented.")
+}
+
  const personalImageAlt = "Albert Llargués"
 ---
 
-<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
+<article class="w-full max-w-lg mx-auto p-4 rounded-2xl shadow-lg bg-white dark:bg-gray-900">
+  <!-- Card Header: Imagen y Nombre -->
   <div
-    class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+    class="flex items-center justify-between cursor-pointer"
+    id="card-header"
   >
-    <p>
-        My name is Albert, I am 30 years old and I am from Barcelona, Spain but now living in Trondheim, Norway. I started with coding 3 years ago. After 10 years working for the transport sector, I decided to change the direction of my professional carreer. A big step in life that I took with the <strong>inconditional</strong>  support of my <em class="italic">family, friends</em> and with a lot of positive energy.
-    </p>
-
-    <p>
-        I finished my studies as <strong>Multiplatform App Developer.</strong> and I am enrrolled in a course of <strong>Back-end development, at Noroff University.</strong> I love to focus in user experience, in order to offer the best experience possible.
-    </p>
+    <div class="flex items-center gap-4">
+      <img
+        width="80"
+        height="80"
+        src="/public/projects/foto-aboutme.jpg"
+        alt={personalImageAlt}
+        class="object-cover w-20 h-20 rounded-full bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
+      />
+      <h2 class="text-xl font-bold text-gray-700 dark:text-gray-300">
+        Albert Llargués
+      </h2>
+    </div>
+    <!-- Icono para indicar que se puede desplegar -->
+    <span id="toggle-icon" class="text-gray-500 dark:text-gray-400">▼</span>
   </div>
 
-  <img 
-    width="200" 
-    height="200" src="/public/projects/albs-foto.webp" 
-    alt={personalImageAlt} 
-    class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 " 
-    style="object-position: 50% 50%">
+  <!-- Contenido desplegable -->
+  <div id="collapsible-content" class="hidden mt-4 text-gray-700 dark:text-gray-300">
+    <p class="mb-4">
+      My name is Albert, I am 30 years old and I am from Barcelona, Spain, but currently living in Trondheim, Norway.
+      I started coding 3 years ago. After 10 years working in the transport sector, I decided to change the direction of my professional career.
+      It was a big step in life, made possible with the <strong>unconditional</strong> support of my <em class="italic">family, friends</em>, and a lot of positive energy.
+    </p>
+
+    <p class="mb-4">
+      I completed my studies as a <strong>Multiplatform App Developer</strong> and am currently enrolled in a course on
+      <strong>Back-end Development at Noroff University</strong>. I am passionate about user experience and strive to
+      provide the best possible interactions in all my projects.
+    </p>
+  </div>
 </article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('card-header');
+    const content = document.getElementById('collapsible-content');
+    const icon = document.getElementById('toggle-icon');
+
+    if (header && content && icon) {
+      header.addEventListener('click', () => {
+        const isHidden = content.classList.contains('hidden');
+
+        // Alternar la u del contenido
+        content.classList.toggle('hidden', !isHidden);
+        icon.textContent = isHidden ? '▲' : '▼';
+      });
+    }
+  });
+</script>
+
+
 
