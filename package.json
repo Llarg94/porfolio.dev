@@ -14,7 +14,7 @@
     "@astrojs/check": "0.9.4",
     "@astrojs/tailwind": "5.1.2",
     "@fontsource-variable/onest": "5.1.0",
-    "astro": "^5.1.4",
+    "astro": "^5.5.2",
     "flowbite": "^2.5.2",
     "porfolio-albs": "file:",
     "tailwindcss": "3.4.14",
