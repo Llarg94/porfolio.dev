@@ -1,0 +1,104 @@
+---
+// Skills.astro
+const skills = [
+  {
+    title: "Coding languages & Frameworks",
+    items: [
+      { name: "Java", icon: "logos:java" },
+      { name: "JavaScript", icon: "logos:javascript" },
+      { name: "Android", icon: "logos:android-icon" },
+      { name: "Python", icon: "logos:python" },
+      { name: "React", icon: "logos:react" },
+      { name: "HTML", icon: "logos:html-5" },
+      { name: "CSS", icon: "logos:css-3" },
+    ],
+  },
+  {
+    title: "Data base",
+    items: [
+      { name: "MySQL", icon: "logos:mysql" },
+      { name: "MongoDB", icon: "logos:mongodb-icon" },
+    ],
+  },
+  {
+    title: "Testing & APIs",
+    items: [
+      { name: "Swagger", icon: "logos:swagger" },
+      { name: "Jest", icon: "logos:jest" },
+      { name: "Supertest", icon: "noto:test-tube" },
+    ],
+  },
+];
+---
+<section class="skills-section">
+  <h2 class="section-title">💻 Skills</h2>
+  <div class="categories">
+    {skills.map((category) => (
+      <div class="category">
+        <h3>{category.title}</h3>
+        <div class="skills-grid">
+          {category.items.map((skill) => (
+            <div class="skill-card">
+              <span
+                class="iconify"
+                data-icon={skill.icon}
+                data-width="36"
+                data-height="36"
+              ></span>
+              <span>{skill.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .skills-section {
+    padding: 2rem;
+    background: radial-gradient(circle at top left);
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .categories {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .category h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+
+  .skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-4px);
+    background: #07589f;
+  }
+
+  .skill-card span {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+</style>

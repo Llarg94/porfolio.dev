@@ -1,66 +1,50 @@
 ---
-function toggleCard() {
-throw new Error("Function not implemented.")
-}
-
- const personalImageAlt = "Albert Llargués"
+const personalImageAlt = "Albert Llargués"
 ---
 
-<article class="w-full max-w-lg mx-auto p-4 rounded-2xl shadow-lg bg-white dark:bg-gray-900">
-  <!-- Card Header: Imagen y Nombre -->
-  <div
-    class="flex items-center justify-between cursor-pointer"
-    id="card-header"
-  >
-    <div class="flex items-center gap-4">
+<article class="w-full max-w-sm mx-auto perspective">
+  <div id="card" class="relative w-full h-80 transition-transform duration-700 transform-style-preserve-3d" onclick="this.classList.toggle('is-flipped')">
+    
+    <!-- Front -->
+    <div class="absolute w-full h-full backface-hidden bg-white dark:bg-gray-900 rounded-2xl shadow-lg flex flex-col items-center justify-center p-4">
       <img
-        width="80"
-        height="80"
         src="/projects/foto-aboutme.jpg"
         alt={personalImageAlt}
-        class="object-cover w-20 h-20 rounded-full bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
+        class="w-24 h-24 rounded-full mb-4 ring-2 ring-yellow-400 object-cover"
       />
-      <h2 class="text-xl font-bold text-gray-700 dark:text-gray-300">
-        Albert Llargués
-      </h2>
+      <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Who am I?</h2>
+      <p class="text-gray-500 dark:text-gray-300 text-center">Click to learn more</p>
     </div>
-    <!-- Icono para indicar que se puede desplegar -->
-    <span id="toggle-icon" class="text-gray-500 dark:text-gray-400">▼</span>
-  </div>
 
-  <!-- Contenido desplegable -->
-  <div id="collapsible-content" class="hidden mt-4 text-gray-700 dark:text-gray-300">
-    <p class="mb-4">
-      My name is Albert, I am 30 years old and I am from Barcelona, Spain, but currently living in Trondheim, Norway.
-      I started coding 3 years ago. After 10 years working in the transport sector, I decided to change the direction of my professional career.
-      It was a big step in life, made possible with the <strong>unconditional</strong> support of my <em class="italic">family, friends</em>, and a lot of good energy.
-    </p>
-
-    <p class="mb-4">
-      I completed my studies as a <strong>Multiplatform App Developer</strong> and am currently enrolled in a course on
-      <strong>Back-end Development at Noroff University</strong>. I am passionate about user experience and strive to
-      provide the best possible interactions in all my projects.
-    </p>
+    <!-- Back -->
+    <div class="absolute w-full h-full backface-hidden rotate-y-180 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 overflow-auto">
+      <h3 class="text-lg font-semibold text-gray-700 dark:text-white mb-2">Hi! 👋</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">
+        I'm Albert from <strong>Barcelona</strong>, now living in Trondheim, Norway. After 10 years of dedication into the transports sector, I jumped into tech with a huge support from my family and friends.
+      </p>
+      <p class="text-sm text-gray-600 dark:text-gray-300">
+        I studied <strong>Multiplatform App Development</strong> in Barcelona and <strong>Back-End Development</strong> at Noroff, in Norway.
+        I love crafting useful, beautiful, and user-focused digital experiences and I am ready to take the first step into the tech world.
+      </p>
+    </div>
   </div>
 </article>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const header = document.getElementById('card-header');
-    const content = document.getElementById('collapsible-content');
-    const icon = document.getElementById('toggle-icon');
-
-    if (header && content && icon) {
-      header.addEventListener('click', () => {
-        const isHidden = content.classList.contains('hidden');
-
-        // Alternar la u del contenido
-        content.classList.toggle('hidden', !isHidden);
-        icon.textContent = isHidden ? '▲' : '▼';
-      });
-    }
-  });
-</script>
-
-
-
+<style>
+  .perspective {
+    perspective: 1000px;
+  }
+  #card {
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  #card.is-flipped {
+    transform: rotateY(180deg);
+  }
+</style>
