@@ -9,6 +9,10 @@ import ANDROID from "../icons/Android.astro"
 import KOTLIN from "../icons/Kotlin.astro"
 import MySQL from "../icons/MySQL.astro"
 import TailwindCSS from "../icons/TailwindCSS.astro"
+import VERCEL from "../icons/Vercel.astro"
+import REACT from "../icons/React.astro"
+import ASTRO from "../icons/Astro.astro"
+import SUPABASE from "../icons/Supabase.astro"
 import Link from "../icons/Link.astro"
 import GitHub from "../icons/GitHub.astro"
 import LinkButton from "./LinkButton.astro"
@@ -18,17 +22,21 @@ const TAGS = {
   HTML: { name: "HTML", class: "bg-orange-500 text-white", icon: HTML },
   CSS: { name: "CSS", class: "bg-blue-500 text-white", icon: CSS },
   JAVASCRIPT: { name: "JavaScript", class: "bg-yellow-400 text-black", icon: JAVASCRIPT },
-  AWS: { name: "AWS", class: "bg-orange-300 text-black", icon: AWS },
-  JAVA: { name: "Java", class: "bg-red-600 text-white", icon: JAVA },
-  ANDROID: { name: "Android", class: "bg-green-500 text-white", icon: ANDROID },
+  AWS: { name: "AWS", class: "bg-orange-600 text-black", icon: AWS },
+  REACT: { name: "React", class: "bg-blue-200 text-black", icon: REACT },
+  ASTRO: { name: "Astro", class: "bg-purple-400 text-white", icon: ASTRO },
+  JAVA: { name: "Java", class: "bg-red-900 text-white", icon: JAVA },
+  ANDROID: { name: "Android", class: "bg-green-800 text-white", icon: ANDROID },
   KOTLIN: { name: "Kotlin", class: "bg-purple-500 text-white", icon: KOTLIN },
   MySQL: { name: "MySQL", class: "bg-cyan-700 text-white", icon: MySQL },
-  TAILWIND: { name: "Tailwind CSS", class: "bg-sky-600 text-white", icon: TailwindCSS }
+  SUPABASE: { name: "Supabase", class: "bg-cyan-700 text-white", icon: SUPABASE },
+  TAILWIND: { name: "Tailwind CSS", class: "bg-sky-600 text-white", icon: TailwindCSS },
+  VERCEL: { name: "Vercel", class: "bg-sky-600 text-white", icon: VERCEL }
 }
 
 const PROJECTS = [
   {
-    title: "E-Commerce Web App",
+    title: "E-Commerce Web App 💳",
     short: "Node.js + MySQL e-commerce platform with JWT auth, Swagger docs & testing.",
     description: `A fully functional e-commerce platform built with JavaScript, Node.js, Express, and EJS. 
     Includes:
@@ -40,11 +48,20 @@ const PROJECTS = [
       - Project managed with Jira.`,
     github: "*Shared upon request*",
     link: "",
-    image: "/projects/pending",
+    image: "/projects/e-commerce.png",
     tags: [TAGS.NODE, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.MySQL]
   },
   {
-    title: "PuntualApp",
+    title: "Peña Barcelonista i Trondheim ❤️💙",
+    short: "Astro + React responsive web app with Supabase backend, deployed on Vercel.",
+    description: "A fan community web application for FC Barcelona supporters in Trondheim. Includes:\n  - User authentication and session management with Supabase Auth\n  - Profiles and event management stored in Supabase PostgreSQL\n  - Responsive design built with Astro and React components\n  - Dark/light theme toggle with smooth transitions\n  - Interactive navigation and mobile-friendly menu\n  - Deployment via Vercel for fast and scalable hosting",
+    github: "https://github.com/Llarg94/FCB",
+    link: "",
+    image: "/projects/Peña-barcelonista.png",
+    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.JAVASCRIPT, TAGS.SUPABASE, TAGS.VERCEL, TAGS.TAILWIND]
+  },
+  {
+    title: "PuntualApp 🖥️",
     short: "Android app for employee attendance with geolocation & AWS auth.",
     description: `Built in Java for Android. Uses Google Maps API to geolocate clock-in/out.
       - AWS Amplify + Cognito auth
@@ -54,10 +71,10 @@ const PROJECTS = [
     github: "https://github.com/Llarg94/PuntualApp",
     link: "",
     image: "/projects/puntualapp-foto.webp",
-    tags: [TAGS.KOTLIN, TAGS.JAVA, TAGS.AWS, TAGS.ANDROID, TAGS.MySQL]
+    tags: [TAGS.KOTLIN, TAGS.AWS, TAGS.ANDROID, TAGS.MySQL]
   },
   {
-    title: "2D Videogame",
+    title: "2D Videogame 👾",
     short: "Arcade shooter with LibGDX and Kotlin in Android Studio.",
     description: `Developed using LibGDX and Kotlin. Features:
       - 2D gameplay with collisions, movement and shooting
@@ -67,54 +84,98 @@ const PROJECTS = [
     github: "https://github.com/Llarg94/2Dgame",
     link: "",
     image: "/projects/videojuego2d.png",
-    tags: [TAGS.JAVA, TAGS.ANDROID]
+    tags: [TAGS.JAVA, TAGS.ANDROID, TAGS.KOTLIN]
   }
 ]
 ---
+<!-- (Dentro de tu componente .astro donde tienes la grid) -->
 <div class="grid gap-10">
   {
     PROJECTS.map(({ image, title, short, description, tags, link, github }, index) => (
-      <article class="rounded-xl overflow-hidden shadow-lg bg-white dark:bg-gray-900 transition hover:shadow-2xl">
-        <img src={image} alt={`Screenshot ${title}`} class="w-full h-56 object-cover" loading="lazy" />
+      
+  <article class="rounded-xl overflow-hidden shadow-lg bg-white dark:bg-gray-900 transition hover:shadow-2xl p-4">
+    <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">{title}</h3>
+    <p class="text-sm text-gray-600 dark:text-gray-300">{short}</p>
 
-        <div class="p-6 space-y-3">
-          <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">{title}</h3>
+  <!-- Botón toggle -->
+  <button
+    type="button"
+    id={`btn-img-${index}`}
+    class="mt-2 text-sm text-blue-500 hover:underline hover:text-yellow-300"
+    onclick={`
+      const img = document.getElementById('img-${index}');
+      const btn = document.getElementById('btn-img-${index}');
+      
+      if (img.classList.contains('max-h-0')) {
+        img.classList.remove('max-h-0', 'opacity-0');
+        img.classList.add('max-h-[500px]', 'opacity-100');
+        btn.textContent = 'Close image';
+      } else {
+        img.classList.remove('max-h-[500px]', 'opacity-100');
+        img.classList.add('max-h-0', 'opacity-0');
+        btn.textContent = 'Show image';
+      }
+    `}
+  >
+    Show image
+  </button>
 
-          <p class="text-sm text-gray-600 dark:text-gray-300">{short}</p>
+    <!-- Imagen con transición -->
+    <img
+      id={`img-${index}`}
+      src={image}
+      alt={`Screenshot ${title}`}
+      class="w-full object-cover mt-2 transition-all duration-500 ease-in-out max-h-0 opacity-0 overflow-hidden rounded-lg"
+    />
 
-          <button class="text-sm text-blue-500 hover:underline" onclick={`document.getElementById('desc-${index}').classList.toggle('hidden')`}>
-            Show more
-          </button>
 
-          <div id={`desc-${index}`} class="hidden text-sm whitespace-pre-line text-gray-700 dark:text-gray-300 mt-2">
-            {description}
-          </div>
+      <!-- Botón para mostrar más info -->
+    <button
+      type="button"
+      id={`btn-desc-${index}`}
+      class="mt-2 text-sm text-blue-500 hover:underline hover:text-yellow-300"
+      onclick={`
+        const desc = document.getElementById('desc-${index}');
+        const btn = document.getElementById('btn-desc-${index}');
+        
+        if (desc.classList.contains('max-h-0')) {
+          desc.classList.remove('max-h-0', 'opacity-0');
+          desc.classList.add('max-h-96', 'opacity-100');
+          btn.textContent = 'Show less';
+        } else {
+          desc.classList.remove('max-h-96', 'opacity-100');
+          desc.classList.add('max-h-0', 'opacity-0');
+          btn.textContent = 'Show more';
+        }
+      `}
+    >
+      Show more
+    </button>
 
-          <div class="flex flex-wrap gap-2 mt-3">
-            {tags.map(tag => (
-              <span class={`flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full ${tag.class}`}>
-                <tag.icon class="w-4 h-4" />
-                {tag.name}
-              </span>
-            ))}
-          </div>
+    <!-- Contenido con animación -->
+    <div
+      id={`desc-${index}`}
+      class="transition-all duration-500 ease-in-out max-h-0 opacity-0 overflow-hidden text-sm whitespace-pre-line text-gray-700 dark:text-gray-300 mt-2"
+    >
+      {description}
+    </div>
 
-          <footer class="flex gap-4 mt-4">
-            {github && (
-              <LinkButton href={github}>
-                <GitHub class="size-5" />
-                Code
-              </LinkButton>
-            )}
-            {link && (
-              <LinkButton href={link}>
-                <Link class="size-5" />
-                Preview
-              </LinkButton>
-            )}
-          </footer>
-        </div>
-      </article>
+  <!-- TAGS siempre visibles -->
+    <div class="flex flex-wrap gap-2 mt-4">
+      {tags.map(tag => (
+        <span class={`flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full ${tag.class}`}>
+          <tag.icon class="w-5 h-5" />
+          {tag.name}
+        </span>
+      ))}
+    </div>
+
+
+  </article>
+
     ))
   }
 </div>
+
+
+

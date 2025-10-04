@@ -1,9 +1,9 @@
 ---
-const personalImageAlt = "Albert Llargués"
+const personalImageAlt = "Albert Llargués";
 ---
 
-<article class="w-full max-w-sm mx-auto perspective">
-  <div id="card" class="relative w-full h-80 transition-transform duration-700 transform-style-preserve-3d" onclick="this.classList.toggle('is-flipped')">
+<article class="w-full max-w-md mx-auto perspective">
+  <div id="card" class="relative w-full h-96 transition-transform duration-700 transform-style-preserve-3d cursor-pointer" onclick="this.classList.toggle('is-flipped')">
     
     <!-- Front -->
     <div class="absolute w-full h-full backface-hidden bg-white dark:bg-gray-900 rounded-2xl shadow-lg flex flex-col items-center justify-center p-4">
@@ -12,33 +12,25 @@ const personalImageAlt = "Albert Llargués"
         alt={personalImageAlt}
         class="w-28 h-28 rounded-full mb-4 ring-2 ring-yellow-400 object-cover"
       />
-      <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Who am I?</h2>
-      <p class="text-gray-500 dark:text-gray-300 text-center">Click to learn more</p>
+      <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">👨‍💻 More about me</h2>
+      <p class="text-sm text-blue-500 dark:text-blue-400">Tap to flip</p>
     </div>
 
     <!-- Back -->
     <div class="absolute w-full h-full backface-hidden rotate-y-180 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 overflow-auto">
       <h3 class="text-lg font-semibold text-gray-700 dark:text-white mb-2">Hi! 👋</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">
-        I'm Albert from Spain, <strong>Barcelona</strong>, recently moved to Trondheim. After 10 years of dedication into the transports sector, I started learning to code by myself and taking some graduated courses to keep pursuing my dream to become a programmer.
-
+      <p class="text-md text-gray-600 dark:text-gray-300 mb-2">
+        I'm Albert from Spain, <strong>Barcelona</strong>, recently moved to Trondheim. After 10 years in the transports sector, I started learning to code by myself and taking courses to pursue my dream of becoming a programmer.
       </p>
-      <p class="text-sm text-gray-600 dark:text-gray-300">
-        I studied:
-        </p>
-        <ul>
-          <li>
-            <strong>Multiplatform App Development</strong> in Barcelona.
-            </li>
-          </ul> 
-          <ul>
-          <li>
-            <strong>Back-End Development</strong> at Noroff, in Norway.
-          </li>
-        </ul> 
-        <br>
-          <p>I love crafting useful, beautiful, and user-focused digital experiences and I am ready to take the first step and start my professional career.</p>
+      
+      <p class="text-md text-gray-600 dark:text-gray-300 mb-2">I studied:</p>
+      <ul class="space-y-2 text-md text-gray-600 dark:text-gray-300">
+        <li>🎓 Multiplatform App Development – Barcelona</li>
+        <li>🎓 Back-End Development – Noroff (Norway)</li>
+      </ul>
 
+      <p class="text-md text-gray-600 dark:text-gray-300 mt-2">
+        I love crafting from scratch, solving problems, and working hard to achieve my goals. I gained experience by trying, testing, and creating diverse projects in different languages—some as final projects in my courses and others on my own.
       </p>
     </div>
   </div>
@@ -48,16 +40,19 @@ const personalImageAlt = "Albert Llargués"
   .perspective {
     perspective: 1000px;
   }
+
   #card {
     transform-style: preserve-3d;
-    cursor: pointer;
   }
+
   .backface-hidden {
     backface-visibility: hidden;
   }
+
   .rotate-y-180 {
     transform: rotateY(180deg);
   }
+
   #card.is-flipped {
     transform: rotateY(180deg);
   }
