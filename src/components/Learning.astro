@@ -1,0 +1,95 @@
+---
+import { isTemplateSpan } from "typescript"
+
+const items = [
+    {
+        autor: "Noroff",
+        image:"./projects/noroff.png",
+        link: "https://www.noroff.no/",
+    },
+    {
+        autor: "IOC",
+        image:"./projects/ioc.png",
+        link: "https://ioc.xtec.cat/educacio/",
+    },
+    {
+  autor: "Midudev",
+  image:"./projects/midudev.jpg",
+  link: "https://midu.dev/",
+},
+    {
+  autor: "Aristidevs",
+  image:"./projects/aristidevs.png",
+  link: "https://www.youtube.com/c/aristidevs",
+},
+    {
+  autor: "Mouredev",
+  image:"./projects/mouredev.jpg",
+  link: "https://moure.dev/",
+},
+    {
+  autor: "freeCodeCamp.org",
+  image:"./projects/freecodecamp.png",
+  link: "https://moure.dev/",
+},
+    {
+  autor: "Sajjaad Khader",
+  image:"./projects/Sajjaad-Khader.jpg",
+  link: "https://swelaunchpad.com/",
+},
+    {
+  autor: "Full Stack Open Course",
+  image:"./projects/fullstackopen.png",
+  link: "https://fullstackopen.com/",
+},
+]
+const programadores = [...items, ...items]; //duplicate for infinite scroll
+---
+
+<div class="carrusel-container overflow-hidden relative w-full">
+  <h3 class="text-lg font-semibold text-white mb-4">From where I've been learning</h3>
+
+  <div class="relative">
+    <div id="carousel-container" class="flex animate-scroll space-x-6 w-max">
+      {programadores.map((programador) => (
+        <a 
+          href={programador.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-shrink-0 w-40 text-center"
+          title={programador.autor}
+        >
+          <img 
+            src={programador.image} 
+            alt={programador.autor}
+            class="w-40 h-40 object-cover rounded-xl shadow-lg"
+          />
+          <p class="mt-2 text-sm text-white">{programador.autor}</p>
+        </a>
+      ))}
+    </div>
+
+    <!-- Overlays para el difuminado -->
+    <div 
+      class="pointer-events-none absolute inset-y-0 left-0 w-20 z-20"
+      style="background: linear-gradient(to right, #060c17, transparent);"
+    />
+    <div 
+      class="pointer-events-none absolute inset-y-0 right-0 w-20 z-20"
+      style="background: linear-gradient(to left, #060c17, transparent);"
+    />
+  </div>
+</div>
+
+<style>
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* -50% porque duplicamos el contenido */
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+  will-change: transform;
+}
+</style>
+

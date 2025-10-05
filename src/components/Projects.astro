@@ -16,6 +16,7 @@ import SUPABASE from "../icons/Supabase.astro"
 import Link from "../icons/Link.astro"
 import GitHub from "../icons/GitHub.astro"
 import LinkButton from "./LinkButton.astro"
+import SocialPill from "./SocialPill.astro"
 
 const TAGS = {
   NODE: { name: "Node.js", class: "bg-green-700 text-white", icon: NodeJS },
@@ -46,7 +47,7 @@ const PROJECTS = [
       - Unit tests with Jest & Supertest
       - Server testing with Postman
       - Project managed with Jira.`,
-    github: "*Shared upon request*",
+    github: "https://github.com/Llarg94",
     link: "",
     image: "/projects/e-commerce.png",
     tags: [TAGS.NODE, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.MySQL]
@@ -141,15 +142,15 @@ const PROJECTS = [
         if (desc.classList.contains('max-h-0')) {
           desc.classList.remove('max-h-0', 'opacity-0');
           desc.classList.add('max-h-96', 'opacity-100');
-          btn.textContent = 'Show less';
+          btn.textContent = 'Show less info';
         } else {
           desc.classList.remove('max-h-96', 'opacity-100');
           desc.classList.add('max-h-0', 'opacity-0');
-          btn.textContent = 'Show more';
+          btn.textContent = 'Show more info';
         }
       `}
     >
-      Show more
+      Show more info
     </button>
 
     <!-- Contenido con animación -->
@@ -169,8 +170,11 @@ const PROJECTS = [
         </span>
       ))}
     </div>
-
-
+    <br/>
+      <SocialPill href={github} target="_blank" rel="noopener noreferrer">
+      <GitHub class="w-4 h-4" />
+        GitHub
+      </SocialPill>
   </article>
 
     ))
