@@ -2,41 +2,41 @@
 const personalImageAlt = "Albert Llargués";
 ---
 
-<article class="w-full max-w-md mx-auto perspective">
-  <div id="card" class="relative w-full h-96 transition-transform duration-700 transform-style-preserve-3d cursor-pointer" onclick="this.classList.toggle('is-flipped')">
-    
-    <!-- Front -->
-    <div class="absolute w-full h-full backface-hidden bg-white dark:bg-gray-900 rounded-2xl shadow-lg flex flex-col items-center justify-center p-4">
-      <img
-        src="/projects/foto-aboutme.jpg"
-        alt={personalImageAlt}
-        class="w-28 h-28 rounded-full mb-4 ring-2 ring-yellow-400 object-cover"
-      />
-      <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">👨‍💻 More about me</h2>
-      <p class="text-sm text-blue-500 dark:text-blue-400">Tap to flip</p>
-    </div>
+<section class="grid md:grid-cols-2 gap-10 items-center max-w-4xl mx-auto">
+  <img
+    src="/projects/foto-aboutme.jpg"
+    alt="Albert Llargués"
+    class="rounded-2xl shadow-lg w-full max-w-sm mx-auto object-cover"
+  />
 
-    <!-- Back -->
-    <div class="absolute w-full h-full backface-hidden rotate-y-180 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 overflow-auto">
-      <h3 class="text-lg font-semibold text-gray-700 dark:text-white mb-2">Hi! 👋</h3>
-      <p class="text-md text-gray-600 dark:text-gray-300 mb-2">
-        I'm Albert from Spain, <strong>Barcelona</strong>, recently moved to Trondheim. After 10 years in the transports sector, I started learning to code by myself and taking courses to pursue my dream of becoming a programmer.
-      </p>
-      
-      <p class="text-md text-gray-600 dark:text-gray-300 mb-2">I studied:</p>
-      <ul class="space-y-2 text-md text-gray-600 dark:text-gray-300">
-        <li>🎓 Multiplatform App Development – Barcelona</li>
-        <li>🎓 Back-End Development – Noroff (Norway)</li>
-        <li>🎓 Cisco Networking – Cisco (online)</li>
-      </ul>
+  <div>
 
-      <p class="text-md text-gray-600 dark:text-gray-300 mt-2">
-        I love crafting from scratch, solving problems and working hard to achieve my goals. I gained experience by trying, testing, and creating diverse projects in different languages—some as final projects in my courses and others on my own.
-      </p>
-    </div>
+    <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+      I'm Albert, a junior full-stack developer originally from Barcelona and
+      currently based in Trondheim. After more than 10 years working in
+      the transport sector, I decided to change careers and pursue my passion
+      for technology and problem-solving.
+    </p>
+
+    <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+      I started learning programming through self-study and formal education,
+      focusing on building real-world applications and understanding how
+      software works end to end — from backend logic to frontend interfaces and deployment.
+    </p>
+
+    <ul class="space-y-2 text-gray-700 dark:text-gray-300 mb-4">
+      <li>🎓 Multiplatform App Development – Barcelona</li>
+      <li>🎓 Back-End Development – Noroff (Norway)</li>
+      <li>🎓 Cisco Networking – Cisco (online)</li>
+    </ul>
+
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+      I enjoy building projects from scratch, learning by doing, and constantly
+      improving my skills. I'm especially interested in web development, clean
+      code, and creating practical solutions that solve problems from daily basis.
+    </p>
   </div>
-</article>
-
+</section>
 <style>
   .perspective {
     perspective: 1000px;

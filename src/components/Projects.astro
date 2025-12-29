@@ -15,6 +15,9 @@ import ASTRO from "../icons/Astro.astro"
 import SUPABASE from "../icons/Supabase.astro"
 import Link from "../icons/Link.astro"
 import GitHub from "../icons/GitHub.astro"
+import PYTHON from "../icons/Python.astro"
+import FASTAPI from "../icons/FastApi.astro"
+import SQLITE from "../icons/SqLite.astro"
 import LinkButton from "./LinkButton.astro"
 import SocialPill from "./SocialPill.astro"
 
@@ -32,7 +35,10 @@ const TAGS = {
   MySQL: { name: "MySQL", class: "bg-cyan-700 text-white", icon: MySQL },
   SUPABASE: { name: "Supabase", class: "bg-cyan-700 text-white", icon: SUPABASE },
   TAILWIND: { name: "Tailwind CSS", class: "bg-sky-600 text-white", icon: TailwindCSS },
-  VERCEL: { name: "Vercel", class: "bg-sky-600 text-white", icon: VERCEL }
+  VERCEL: { name: "Vercel", class: "bg-sky-600 text-white", icon: VERCEL },
+  PYTHON: { name: "Phyton", class: "bg-sky-800 text-white", icon: PYTHON },
+  FASTAPI: { name: "FastApi", class: "bg-gray-800 text-white", icon: FASTAPI },
+  SQLITE: { name: "SqLite", class: "bg-sky-900 text-white", icon: SQLITE },
 }
 
 const PROJECTS = [
@@ -52,6 +58,37 @@ const PROJECTS = [
     image: "/projects/e-commerce.png",
     tags: [TAGS.NODE, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.MySQL]
   },
+  {
+  title: "Personal Finance Tracker 💰",
+  short: "Full-stack finance tracking app built with Python (FastAPI) and React.",
+  description: `A personal finance web application designed to track monthly income, expenses, and savings.
+  Built as a family-oriented tool to understand spending habits and improve financial planning.
+
+  Includes:
+    - FastAPI backend with RESTful endpoints
+    - React frontend with hooks and component-based architecture
+    - SQLite database using SQLAlchemy Core
+    - CRUD operations (create, edit, delete transactions)
+    - Monthly transaction tracking
+    - Expense grouping (fixed, variable, savings – 50/30/20 model)
+    - Interactive dashboard with balance calculation
+    - Data visualization using pie charts
+    - CORS configuration and API integration
+    - Clean, portfolio-ready UI
+
+The project focuses on clean architecture, API-driven design, and real-world usability.`,
+  github: "https://github.com/Llarg94",
+  link: "",
+  image: "/projects/personal-finance.png",
+  tags: [
+    TAGS.PYTHON,
+    TAGS.FASTAPI,
+    TAGS.REACT,
+    TAGS.JAVASCRIPT,
+    TAGS.SQLITE
+  ]
+},
+
   {
     title: "Peña Barcelonista i Trondheim ❤️💙",
     short: "Astro + React responsive web app with Supabase backend, deployed on Vercel.",
