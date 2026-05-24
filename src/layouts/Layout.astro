@@ -4,17 +4,21 @@ import "@fontsource-variable/onest/index.css"
 import Header from '../components/Header.astro';
 import Footer from "../components/Footer.astro"
 import { ViewTransitions } from "astro:transitions"
+import type { Locale } from "../i18n/translations"
+import { translations } from "../i18n/translations"
 
 interface Props {
 	title: string;
 	description: string;
+	lang?: Locale;
 }
 
-const { description, title } = Astro.props;
+const { description, title, lang = "es" } = Astro.props;
+const t = translations[lang];
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -47,9 +51,9 @@ const { description, title } = Astro.props;
 		<!-- Patrón de puntos sutil -->
 		<div class="fixed inset-0 z-[-1] opacity-[0.03] dark:opacity-[0.05]" style="background-image: radial-gradient(circle, currentColor 1px, transparent 1px); background-size: 40px 40px;"></div>
 
-		<Header />
+		<Header lang={lang} />
 		<slot />
-		<Footer />
+		<Footer t={t.footer} />
 		<style is:global>
 			:root {
 			  color-scheme: light dark;

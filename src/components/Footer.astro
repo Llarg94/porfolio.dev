@@ -1,4 +1,9 @@
 ---
+export interface Props {
+  t?: string
+}
+
+const { t } = Astro.props
 const currentYear = new Date().getFullYear()
 ---
 
@@ -7,7 +12,7 @@ const currentYear = new Date().getFullYear()
     <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
       <span class="text-sm text-gray-500 dark:text-gray-500">
         © {currentYear} <a href="/" class="hover:text-primary-500 transition-colors">Albert Llargués</a>.
-        Todos los derechos reservados.
+        {t || "Todos los derechos reservados."}
       </span>
       <div class="flex items-center gap-4 text-sm">
         <a href="/#sobre-mi" class="text-gray-500 dark:text-gray-500 hover:text-primary-500 transition-colors">Sobre mí</a>

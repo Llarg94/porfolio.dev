@@ -1,8 +1,14 @@
 ---
-const skills = [
+export interface Props {
+  t: {
+    categories: { title: string; icon: string }[]
+  }
+}
+
+const { t } = Astro.props
+
+const skillItems = [
   {
-    title: "Lenguajes y Frameworks",
-    icon: "⚡",
     items: [
       { name: "Java", icon: "logos:java" },
       { name: "JavaScript", icon: "logos:javascript" },
@@ -18,8 +24,6 @@ const skills = [
     ],
   },
   {
-    title: "Bases de datos",
-    icon: "🗄️",
     items: [
       { name: "MySQL", icon: "logos:mysql" },
       { name: "MongoDB", icon: "logos:mongodb-icon" },
@@ -28,8 +32,6 @@ const skills = [
     ],
   },
   {
-    title: "Testing y APIs",
-    icon: "🧪",
     items: [
       { name: "Swagger", icon: "logos:swagger" },
       { name: "Jest", icon: "logos:jest" },
@@ -38,8 +40,6 @@ const skills = [
     ],
   },
   {
-    title: "Cloud y DevOps",
-    icon: "☁️",
     items: [
       { name: "AWS", icon: "logos:aws" },
       { name: "Vercel", icon: "logos:vercel-icon" },
@@ -51,15 +51,15 @@ const skills = [
 
 <div class="grid md:grid-cols-2 gap-6 animate-on-scroll">
   {
-    skills.map((category) => (
+    skillItems.map((cat, i) => (
       <div class="group bg-white dark:bg-gray-900/50 rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg hover:border-primary-200 dark:hover:border-primary-800 transition-all duration-300">
         <div class="flex items-center gap-3 mb-4">
-          <span class="text-2xl">{category.icon}</span>
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{category.title}</h3>
+          <span class="text-2xl">{t.categories[i].icon}</span>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{t.categories[i].title}</h3>
         </div>
         <div class="flex flex-wrap gap-2">
           {
-            category.items.map((skill) => (
+            cat.items.map((skill) => (
               <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/50 hover:text-primary-700 dark:hover:text-primary-300 hover:shadow-sm transition-all duration-200 cursor-default">
                 <span class="iconify" data-icon={skill.icon} data-width="16" data-height="16"></span>
                 {skill.name}

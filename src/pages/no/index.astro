@@ -1,0 +1,10 @@
+---
+import PortfolioPage from "../../components/PortfolioPage.astro"
+import { translations } from "../../i18n/translations"
+import type { Locale } from "../../i18n/translations"
+
+const lang: Locale = "no"
+const t = translations[lang]
+---
+
+<PortfolioPage t={t} lang={lang} />

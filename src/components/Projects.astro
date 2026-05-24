@@ -1,110 +1,48 @@
 ---
-import NodeJS from "../icons/Node.astro"
-import AWS from "../icons/AWS.astro"
-import JAVA from "../icons/Java.astro"
-import ANDROID from "../icons/Android.astro"
-import KOTLIN from "../icons/Kotlin.astro"
-import MySQL from "../icons/MySQL.astro"
-import TailwindCSS from "../icons/TailwindCSS.astro"
-import VERCEL from "../icons/Vercel.astro"
-import REACT from "../icons/React.astro"
-import ASTRO from "../icons/Astro.astro"
-import SUPABASE from "../icons/Supabase.astro"
+import type { Translations } from "../i18n/translations"
 import GitHub from "../icons/GitHub.astro"
-import PYTHON from "../icons/Python.astro"
-import FASTAPI from "../icons/FastApi.astro"
-import SQLITE from "../icons/SqLite.astro"
 
-const TAGS = {
-  NODE: { name: "Node.js", class: "bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300" },
-  HTML: { name: "HTML", class: "bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-300" },
-  CSS: { name: "CSS", class: "bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300" },
-  JAVASCRIPT: { name: "JavaScript", class: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-300" },
-  AWS: { name: "AWS", class: "bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-300" },
-  REACT: { name: "React", class: "bg-sky-100 text-sky-800 dark:bg-sky-900/50 dark:text-sky-300" },
-  ASTRO: { name: "Astro", class: "bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300" },
-  JAVA: { name: "Java", class: "bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-300" },
-  ANDROID: { name: "Android", class: "bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300" },
-  KOTLIN: { name: "Kotlin", class: "bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300" },
-  MySQL: { name: "MySQL", class: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/50 dark:text-cyan-300" },
-  SUPABASE: { name: "Supabase", class: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/50 dark:text-cyan-300" },
-  TAILWIND: { name: "Tailwind CSS", class: "bg-sky-100 text-sky-800 dark:bg-sky-900/50 dark:text-sky-300" },
-  VERCEL: { name: "Vercel", class: "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300" },
-  PYTHON: { name: "Python", class: "bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300" },
-  FASTAPI: { name: "FastAPI", class: "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300" },
-  SQLITE: { name: "SQLite", class: "bg-sky-100 text-sky-800 dark:bg-sky-900/50 dark:text-sky-300" },
+export interface Props {
+  t: Translations
+  locale: string
 }
 
-const PROJECTS = [
-  {
-    title: "E-Commerce Web App",
-    emoji: "💳",
-    short: "Backend escalable de e-commerce con autenticación, documentación de API y tests.",
-    description: `Backend de e-commerce escalable diseñado para simular aplicaciones reales, incluyendo autenticación JWT, documentación con Swagger y pruebas automatizadas. API RESTful con Node.js y MySQL.`,
-    github: "https://github.com/Llarg94",
-    image: "/projects/e-commerce.png",
-    tags: [TAGS.NODE, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.MySQL],
-  },
-  {
-    title: "Personal Finance Tracker",
-    emoji: "💰",
-    short: "App full-stack para finanzas personales con Python (FastAPI) y React.",
-    description: `Aplicación web de finanzas personales para registrar ingresos, gastos y ahorros mensuales. Construida como herramienta familiar para entender hábitos de gasto y mejorar la planificación financiera.
-    • Backend FastAPI con endpoints RESTful
-    • Frontend React con hooks
-    • SQLite + SQLAlchemy Core
-    • Dashboard interactivo con gráficos
-    • Modelo 50/30/20 de gastos`,
-    github: "https://github.com/Llarg94",
-    image: "/projects/personal-finance.png",
-    tags: [TAGS.PYTHON, TAGS.FASTAPI, TAGS.REACT, TAGS.JAVASCRIPT, TAGS.SQLITE]
-  },
-  {
-    title: "Peña Barcelonista i Trondheim",
-    emoji: "❤️💙",
-    short: "Web app responsive para aficionados del FC Barcelona en Trondheim.",
-    description: `Aplicación web comunitaria para seguidores del FC Barcelona en Trondheim.
-    • Autenticación y sesiones con Supabase Auth
-    • Perfiles y gestión de eventos en PostgreSQL
-    • Diseño responsive con Astro + React
-    • Modo oscuro/claro con transiciones
-    • Desplegado en Vercel`,
-    github: "https://github.com/Llarg94/FCB",
-    image: "/projects/Peña-barcelonista.png",
-    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.JAVASCRIPT, TAGS.SUPABASE, TAGS.VERCEL, TAGS.TAILWIND]
-  },
-  {
-    title: "PuntualApp",
-    emoji: "🖥️",
-    short: "App Android para control de asistencia con geolocalización y AWS.",
-    description: `App Android para registro de entrada/salida de empleados con geolocalización.
-    • Google Maps API para geolocalización
-    • AWS Amplify + Cognito para autenticación
-    • Backend PHP en EC2 + MySQL
-    • Proyecto final del Grado en Desarrollo de Apps`,
-    github: "https://github.com/Llarg94/PuntualApp",
-    image: "/projects/puntualapp-foto.webp",
-    tags: [TAGS.KOTLIN, TAGS.AWS, TAGS.ANDROID, TAGS.MySQL]
-  },
-  {
-    title: "2D Videogame",
-    emoji: "👾",
-    short: "Videojuego arcade shooter con LibGDX y Kotlin.",
-    description: `Videojuego 2D desarrollado con LibGDX y Kotlin en Android Studio.
-    • Jugabilidad 2D con colisiones, movimiento y disparos
-    • Música de fondo y efectos de sonido
-    • UI sencilla y pulida
-    • Desafíos por niveles`,
-    github: "https://github.com/Llarg94/2Dgame",
-    image: "/projects/videojuego2d.png",
-    tags: [TAGS.JAVA, TAGS.ANDROID, TAGS.KOTLIN]
-  }
+const { t, locale } = Astro.props
+
+const TAGS_MAP: Record<string, string> = {
+  "Node.js": "bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300",
+  "HTML": "bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-300",
+  "CSS": "bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300",
+  "JavaScript": "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-300",
+  "AWS": "bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-300",
+  "React": "bg-sky-100 text-sky-800 dark:bg-sky-900/50 dark:text-sky-300",
+  "Astro": "bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300",
+  "Java": "bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-300",
+  "Android": "bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300",
+  "Kotlin": "bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300",
+  "MySQL": "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/50 dark:text-cyan-300",
+  "Supabase": "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/50 dark:text-cyan-300",
+  "Tailwind CSS": "bg-sky-100 text-sky-800 dark:bg-sky-900/50 dark:text-sky-300",
+  "Vercel": "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300",
+  "Python": "bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300",
+  "FastAPI": "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300",
+  "SQLite": "bg-sky-100 text-sky-800 dark:bg-sky-900/50 dark:text-sky-300",
+}
+
+const PROJECTS_META = [
+  { emoji: "💳", github: "https://github.com/Llarg94", image: "/projects/e-commerce.png", tags: ["Node.js", "HTML", "CSS", "JavaScript", "MySQL"] },
+  { emoji: "💰", github: "https://github.com/Llarg94", image: "/projects/personal-finance.png", tags: ["Python", "FastAPI", "React", "JavaScript", "SQLite"] },
+  { emoji: "❤️💙", github: "https://github.com/Llarg94/FCB", image: "/projects/Peña-barcelonista.png", tags: ["Astro", "React", "JavaScript", "Supabase", "Vercel", "Tailwind CSS"] },
+  { emoji: "🖥️", github: "https://github.com/Llarg94/PuntualApp", image: "/projects/puntualapp-foto.webp", tags: ["Kotlin", "AWS", "Android", "MySQL"] },
+  { emoji: "👾", github: "https://github.com/Llarg94/2Dgame", image: "/projects/videojuego2d.png", tags: ["Java", "Android", "Kotlin"] },
 ]
+
+const combined = t.projectsList.map((p, i) => ({ ...p, ...PROJECTS_META[i] }))
 ---
 
 <div class="grid gap-8 animate-on-scroll">
   {
-    PROJECTS.map(({ image, title, emoji, short, description, tags, github }, index) => (
+    combined.map(({ image, title, emoji, short, description, tags, github }, index) => (
       <article class="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900 border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl hover:border-primary-200 dark:hover:border-primary-800 transition-all duration-300">
         <div class="grid md:grid-cols-5 gap-0">
           <!-- Image -->
@@ -140,6 +78,8 @@ const PROJECTS = [
                   type="button"
                   id={`btn-desc-${index}`}
                   class="mt-2 text-xs font-medium text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  data-show={t.projects.showMore}
+                  data-hide={t.projects.showLess}
                   onclick={`
                     const desc = document.getElementById('desc-${index}');
                     const btn = document.getElementById('btn-desc-${index}');
@@ -148,10 +88,9 @@ const PROJECTS = [
                     desc.classList.toggle('opacity-0');
                     desc.classList.toggle('max-h-96');
                     desc.classList.toggle('opacity-100');
-                    btn.textContent = isClosed ? 'Ver menos' : 'Ver más';
-                  `}
-                >
-                  Ver más
+                    btn.textContent = isClosed ? btn.getAttribute('data-hide') : btn.getAttribute('data-show');
+                  `}>
+                {t.projects.showMore}
                 </button>
               </div>
             </div>
@@ -159,9 +98,9 @@ const PROJECTS = [
             <div class="mt-4">
               <!-- Tags -->
               <div class="flex flex-wrap gap-1.5">
-                {tags.map(tag => (
-                  <span class={`inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full ${tag.class}`}>
-                    {tag.name}
+                {tags.map((tag: string) => (
+                  <span class={`inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full ${TAGS_MAP[tag] || "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300"}`}>
+                    {tag}
                   </span>
                 ))}
               </div>
@@ -174,7 +113,7 @@ const PROJECTS = [
                 class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
               >
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                Código fuente
+                {t.projects.sourceCode}
               </a>
             </div>
           </div>

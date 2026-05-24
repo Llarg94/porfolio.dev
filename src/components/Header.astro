@@ -1,14 +1,16 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro"
+import LanguageSwitcher from "./LanguageSwitcher.astro"
+import type { Locale } from "../i18n/translations"
+import { translations } from "../i18n/translations"
 
-const navItems = [
-  { title: "Inicio", label: "hero", url: "/#hero" },
-  { title: "Sobre mí", label: "sobre-mi", url: "/#sobre-mi" },
-  { title: "Skills", label: "skills", url: "/#skills" },
-  { title: "Proyectos", label: "proyectos", url: "/#proyectos" },
-  { title: "Experiencia", label: "experiencia", url: "/#experiencia" },
-  { title: "Contacto", label: "contacto", url: "/#contacto" },
-]
+export interface Props {
+  lang?: Locale
+}
+
+const { lang = "es" } = Astro.props
+const t = translations[lang]
+const navItems = t.nav
 ---
 
 <header
@@ -43,6 +45,7 @@ const navItems = [
       </svg>
     </button>
 
+    <LanguageSwitcher currentLang={lang} />
     <ThemeToggle />
   </nav>
 

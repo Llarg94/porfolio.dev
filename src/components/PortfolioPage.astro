@@ -1,0 +1,92 @@
+---
+import type { Translations, Locale } from "../i18n/translations"
+import Layout from "../layouts/Layout.astro"
+import AboutMe from "../components/AboutMe.astro"
+import Experience from "../components/Experience.astro"
+import Projects from "../components/Projects.astro"
+import SectionContainer from "../components/SectionContainer.astro"
+import Hero from "../components/Hero.astro"
+import TitleSection from "../components/TitleSection.astro"
+import Skills from "../components/Skills.astro"
+import Learning from "../components/Learning.astro"
+import ContactForm from "../components/ContactForm.astro"
+
+export interface Props {
+  t: Translations
+  lang: Locale
+}
+
+const { t, lang } = Astro.props
+---
+
+<Layout
+  title={lang === "es" ? "Albert Llargués | Desarrollador Full Stack" : lang === "ca" ? "Albert Llargués | Desenvolupador Full Stack" : lang === "en" ? "Albert Llargués | Full Stack Developer" : "Albert Llargués | Full Stack Utvikler"}
+  description={t.hero.description}
+  lang={lang}
+>
+  <main class="px-4">
+    <SectionContainer id={t.nav[0].label} class="min-h-[40vh] flex items-center py-12 md:py-24">
+      <Hero t={t.hero} lang={lang} />
+    </SectionContainer>
+
+    <div class="space-y-16 pb-16 md:space-y-20 md:pb-20">
+      <SectionContainer id={t.nav[1].label}>
+        <TitleSection>
+          <span class="text-primary-500">✦</span> {t.sections.about}
+        </TitleSection>
+        <AboutMe t={t.about} />
+      </SectionContainer>
+
+      <SectionContainer id={t.nav[2].label}>
+        <TitleSection>
+          <span class="text-primary-500">✦</span> {t.sections.skills}
+        </TitleSection>
+        <Skills t={t.skills} />
+      </SectionContainer>
+
+      <SectionContainer id={t.nav[3].label}>
+        <TitleSection>
+          <span class="text-primary-500">✦</span> {t.sections.projects}
+        </TitleSection>
+        <Projects t={t} locale={lang} />
+      </SectionContainer>
+
+      <SectionContainer id={t.nav[4].label}>
+        <TitleSection>
+          <span class="text-primary-500">✦</span> {t.sections.experience}
+        </TitleSection>
+        <Experience experiences={t.experiences} />
+      </SectionContainer>
+
+      <SectionContainer id="formacion">
+        <TitleSection>
+          <span class="text-primary-500">✦</span> {t.sections.learning}
+        </TitleSection>
+        <Learning t={t.learning} />
+      </SectionContainer>
+
+      <SectionContainer id="contacto">
+        <TitleSection>
+          <span class="text-primary-500">✦</span> {t.sections.contact}
+        </TitleSection>
+        <ContactForm t={t.contact} />
+      </SectionContainer>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+      observer.observe(el);
+    });
+  });
+</script>

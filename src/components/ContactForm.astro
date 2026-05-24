@@ -3,15 +3,29 @@ import GitHubIcon from "../icons/GitHub.astro"
 import LinkedInIcon from "../icons/LinkedIn.astro"
 import GmailIcon from "../icons/Gmail.astro"
 import SocialPill from "./SocialPill.astro"
+
+export interface Props {
+  t: {
+    text: string
+    email: string
+    location: string
+    formName: string
+    formEmail: string
+    formMessage: string
+    formSubmit: string
+    formPlaceholderName: string
+    formPlaceholderEmail: string
+    formPlaceholderMessage: string
+  }
+}
+
+const { t } = Astro.props
 ---
 
 <div class="animate-on-scroll">
   <div class="grid md:grid-cols-2 gap-10 max-w-3xl mx-auto">
     <div class="space-y-6">
-      <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-        ¿Tienes un proyecto en mente, una oportunidad laboral o simplemente quieres conectar?
-        Estoy siempre abierto a nuevos retos y colaboraciones.
-      </p>
+      <p class="text-gray-600 dark:text-gray-400 leading-relaxed">{t.text}</p>
 
       <div class="space-y-4">
         <div class="flex items-center gap-4">
@@ -21,7 +35,7 @@ import SocialPill from "./SocialPill.astro"
             </svg>
           </div>
           <div>
-            <p class="text-sm font-medium text-gray-900 dark:text-white">Email</p>
+            <p class="text-sm font-medium text-gray-900 dark:text-white">{t.email}</p>
             <a href="mailto:albertllarg1@gmail.com" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors">
               albertllarg1@gmail.com
             </a>
@@ -36,8 +50,8 @@ import SocialPill from "./SocialPill.astro"
             </svg>
           </div>
           <div>
-            <p class="text-sm font-medium text-gray-900 dark:text-white">Ubicación</p>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Trondheim, Noruega</p>
+            <p class="text-sm font-medium text-gray-900 dark:text-white">{t.email}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">{t.location}</p>
           </div>
         </div>
       </div>
@@ -53,7 +67,7 @@ import SocialPill from "./SocialPill.astro"
         </SocialPill>
         <SocialPill href="mailto:albertllarg1@gmail.com">
           <GmailIcon class="size-4" />
-          Email
+          {t.email}
         </SocialPill>
       </div>
     </div>
@@ -61,41 +75,35 @@ import SocialPill from "./SocialPill.astro"
     <div class="bg-white dark:bg-gray-900/50 rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50">
       <form action="https://formspree.io/f/xdkodknr" method="POST" class="space-y-4">
         <div>
-          <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            Nombre
-          </label>
+          <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{t.formName}</label>
           <input
             type="text"
             id="name"
             name="name"
             required
-            placeholder="Tu nombre"
+            placeholder={t.formPlaceholderName}
             class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition text-sm"
           />
         </div>
         <div>
-          <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            Email
-          </label>
+          <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{t.formEmail}</label>
           <input
             type="email"
             id="email"
             name="email"
             required
-            placeholder="tu@email.com"
+            placeholder={t.formPlaceholderEmail}
             class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition text-sm"
           />
         </div>
         <div>
-          <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-            Mensaje
-          </label>
+          <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{t.formMessage}</label>
           <textarea
             id="message"
             name="message"
             required
             rows="4"
-            placeholder="Cuéntame sobre tu proyecto..."
+            placeholder={t.formPlaceholderMessage}
             class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition text-sm resize-none"
           ></textarea>
         </div>
@@ -103,7 +111,7 @@ import SocialPill from "./SocialPill.astro"
           type="submit"
           class="w-full px-6 py-2.5 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-primary-500/25 text-sm"
         >
-          Enviar mensaje
+          {t.formSubmit}
         </button>
       </form>
     </div>

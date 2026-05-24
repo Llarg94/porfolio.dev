@@ -1,5 +1,11 @@
 ---
-const personalImageAlt = "Albert Llargués";
+import type { AboutContent } from "../i18n/translations"
+
+export interface Props {
+  t: AboutContent
+}
+
+const { t } = Astro.props
 ---
 
 <section class="grid md:grid-cols-2 gap-10 items-center max-w-4xl mx-auto animate-on-scroll">
@@ -13,43 +19,23 @@ const personalImageAlt = "Albert Llargués";
   </div>
 
   <div class="space-y-4">
-    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-      Soy Albert, desarrollador Full Stack con un fuerte enfoque en 
-      <strong class="text-primary-500">backend escalable</strong> y tecnologías de 
-      <strong class="text-accent-500">inteligencia artificial</strong>. 
-      Actualmente vivo en Trondheim, Noruega, aunque nací y crecí en Barcelona.
-    </p>
-
-    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-      Tras más de 10 años trabajando en transporte y logística, 
-      decidí dar un giro a mi carrera hacia el desarrollo de software, 
-      impulsado por una pasión de largo recorrido por la tecnología.
-    </p>
-
-    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-      Tengo experiencia construyendo y desplegando aplicaciones full-stack con 
-      JavaScript (React, Node.js, Express) y Python para automatización e IA.
-    </p>
-
-    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-      Mi trayectoria en logística y aduanas me ha dado una gran 
-      <strong class="text-primary-500">madurez profesional</strong>, 
-      capacidad de responsabilidad y atención al detalle — cualidades que ahora aplico 
-      para escribir código mantenible y colaborar en equipos técnicos.
-    </p>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{t.p1}</p>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{t.p2}</p>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{t.p3}</p>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{t.p4}</p>
 
     <div class="flex flex-wrap gap-3 pt-2">
       <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary-50 dark:bg-primary-950/50 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">
         <span class="size-1.5 rounded-full bg-primary-500"></span>
-        JavaScript / TypeScript
+        {t.tag1}
       </span>
       <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-accent-50 dark:bg-accent-950/50 text-accent-700 dark:text-accent-300 rounded-full text-sm font-medium">
         <span class="size-1.5 rounded-full bg-accent-500"></span>
-        Python / IA
+        {t.tag2}
       </span>
       <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-50 dark:bg-green-950/50 text-green-700 dark:text-green-300 rounded-full text-sm font-medium">
         <span class="size-1.5 rounded-full bg-green-500"></span>
-        React / Astro
+        {t.tag3}
       </span>
     </div>
   </div>

@@ -8,4 +8,12 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [tailwind(), react()],
   site: "https://albertllarguesdev.netlify.app/",
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "ca", "en", "no"],
+    routing: {
+      prefixDefaultLocale: false,
+      redirectToDefaultLocale: false,
+    },
+  },
 });

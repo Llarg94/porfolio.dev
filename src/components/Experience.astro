@@ -1,36 +1,17 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
-const EXPERIENCE = [
-  {
-    date: "Actualidad",
-    title: "Almacenero",
-    company: "Autronica Fire and Security AS",
-    description:
-      "Preparación de pedidos nacionales e internacionales en el almacén, empaquetado, etiquetado y preparación para su transporte.",
-    link: "https://www.autronicafire.com/en/",
-  },
-  {
-    date: "Diciembre 2021 - Febrero 2024",
-    title: "Operaciones",
-    company: "Cencora - World Courier",
-    description:
-      "Gestión de transporte y despacho de aduanas para envíos de importación y exportación de productos farmacéuticos y de bioinvestigación.",
-    link: "https://www.cencora.com/",
-  },
-  {
-    date: "Abril 2013 - Marzo 2021",
-    title: "Transporte y Logística",
-    company: "Barcelona",
-    description:
-      "Más de 10 años de experiencia en el sector del transporte y la logística. Más información disponible en mi CV.",
-    link: "/projects/CV%20-%20Albert%20Llargues.pdf",
-  }
-]
+import type { ExperienceItem as ExperienceItemType } from "../i18n/translations"
+
+export interface Props {
+  experiences: ExperienceItemType[]
+}
+
+const { experiences } = Astro.props
 ---
 
 <ol class="relative mt-8">
   {
-    EXPERIENCE.map((experience) => (
+    experiences.map((experience) => (
       <li>
         <ExperienceItem {...experience} />
       </li>

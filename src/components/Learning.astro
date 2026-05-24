@@ -1,21 +1,27 @@
 ---
+export interface Props {
+  t: {
+    subtitle: string
+  }
+}
+
+const { t } = Astro.props
+
 const items = [
-  { autor: "Noroff", image: "./projects/noroff.png", link: "https://www.noroff.no/" },
-  { autor: "IOC", image: "./projects/ioc.png", link: "https://ioc.xtec.cat/educacio/" },
-  { autor: "Midudev", image: "./projects/midudev.jpg", link: "https://midu.dev/" },
-  { autor: "Aristidevs", image: "./projects/aristidevs.png", link: "https://www.youtube.com/c/aristidevs" },
-  { autor: "Mouredev", image: "./projects/mouredev.jpg", link: "https://moure.dev/" },
-  { autor: "freeCodeCamp.org", image: "./projects/freecodecamp.png", link: "https://www.freecodecamp.org/" },
-  { autor: "Sajjaad Khader", image: "./projects/Sajjaad-Khader.jpg", link: "https://swelaunchpad.com/" },
-  { autor: "Full Stack Open", image: "./projects/fullstackopen.png", link: "https://fullstackopen.com/" },
+  { autor: "Noroff", image: "/projects/noroff.png", link: "https://www.noroff.no/" },
+  { autor: "IOC", image: "/projects/ioc.png", link: "https://ioc.xtec.cat/educacio/" },
+  { autor: "Midudev", image: "/projects/midudev.jpg", link: "https://midu.dev/" },
+  { autor: "Aristidevs", image: "/projects/aristidevs.png", link: "https://www.youtube.com/c/aristidevs" },
+  { autor: "Mouredev", image: "/projects/mouredev.jpg", link: "https://moure.dev/" },
+  { autor: "freeCodeCamp.org", image: "/projects/freecodecamp.png", link: "https://www.freecodecamp.org/" },
+  { autor: "Sajjaad Khader", image: "/projects/Sajjaad-Khader.jpg", link: "https://swelaunchpad.com/" },
+  { autor: "Full Stack Open", image: "/projects/fullstackopen.png", link: "https://fullstackopen.com/" },
 ]
 const duplicated = [...items, ...items];
 ---
 
 <div class="animate-on-scroll">
-  <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
-    Plataformas y mentores que han sido clave en mi formación como desarrollador.
-  </p>
+  <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">{t.subtitle}</p>
 
   <div class="overflow-hidden relative w-full">
     <div class="flex animate-scroll gap-6 w-max">
