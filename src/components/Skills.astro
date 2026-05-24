@@ -1,107 +1,73 @@
 ---
-// Skills.astro
 const skills = [
   {
-    title: "Coding languages & Frameworks",
+    title: "Lenguajes y Frameworks",
+    icon: "⚡",
     items: [
       { name: "Java", icon: "logos:java" },
       { name: "JavaScript", icon: "logos:javascript" },
       { name: "Android", icon: "logos:android-icon" },
       { name: "Python", icon: "logos:python" },
       { name: "React", icon: "logos:react" },
+      { name: "Astro", icon: "logos:astro-icon" },
+      { name: "Node.js", icon: "logos:nodejs-icon" },
+      { name: "Kotlin", icon: "logos:kotlin-icon" },
+      { name: "TypeScript", icon: "logos:typescript-icon" },
       { name: "HTML", icon: "logos:html-5" },
       { name: "CSS", icon: "logos:css-3" },
-      { name: "Astro", icon: "logos:astro-icon" },
     ],
   },
   {
-    title: "Data base",
+    title: "Bases de datos",
+    icon: "🗄️",
     items: [
       { name: "MySQL", icon: "logos:mysql" },
       { name: "MongoDB", icon: "logos:mongodb-icon" },
       { name: "Supabase", icon: "logos:supabase-icon" },
+      { name: "SQLite", icon: "logos:sqlite" },
     ],
   },
   {
-    title: "Testing & APIs",
+    title: "Testing y APIs",
+    icon: "🧪",
     items: [
       { name: "Swagger", icon: "logos:swagger" },
       { name: "Jest", icon: "logos:jest" },
-      { name: "Supertest", icon: "noto:test-tube" },
       { name: "Postman", icon: "logos:postman" },
+      { name: "FastAPI", icon: "logos:fastapi-icon" },
+    ],
+  },
+  {
+    title: "Cloud y DevOps",
+    icon: "☁️",
+    items: [
+      { name: "AWS", icon: "logos:aws" },
+      { name: "Vercel", icon: "logos:vercel-icon" },
+      { name: "Git", icon: "logos:git-icon" },
     ],
   },
 ];
 ---
-<section class="skills-section">
-  <h2 class="section-title">💻 Skills</h2>
-  <div class="categories">
-    {skills.map((category) => (
-      <div class="category">
-        <h3>{category.title}</h3>
-        <div class="skills-grid">
-          {category.items.map((skill) => (
-            <div class="skill-card">
-              <span
-                class="iconify"
-                data-icon={skill.icon}
-                data-width="34"
-                data-height="34"
-              ></span>
-              <span>{skill.name}</span>
-            </div>
-          ))}
+
+<div class="grid md:grid-cols-2 gap-6 animate-on-scroll">
+  {
+    skills.map((category) => (
+      <div class="group bg-white dark:bg-gray-900/50 rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg hover:border-primary-200 dark:hover:border-primary-800 transition-all duration-300">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-2xl">{category.icon}</span>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{category.title}</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          {
+            category.items.map((skill) => (
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900/50 hover:text-primary-700 dark:hover:text-primary-300 hover:shadow-sm transition-all duration-200 cursor-default">
+                <span class="iconify" data-icon={skill.icon} data-width="16" data-height="16"></span>
+                {skill.name}
+              </span>
+            ))
+          }
         </div>
       </div>
-    ))}
-  </div>
-</section>
-
-<style>
-  .skills-section {
-    padding: 2rem;
-    background: radial-gradient(circle at top left);
+    ))
   }
-
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .categories {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .category h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 1rem;
-  }
-
-  .skill-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
-  }
-
-  .skill-card:hover {
-    transform: translateY(-4px);
-    background: #07589f;
-  }
-
-  .skill-card span {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-  }
-</style>
+</div>

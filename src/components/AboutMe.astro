@@ -2,59 +2,55 @@
 const personalImageAlt = "Albert Llargués";
 ---
 
-<section class="grid md:grid-cols-2 gap-10 items-center max-w-4xl mx-auto">
-  <img
-    src="/projects/foto-aboutme.jpg"
-    alt="Albert Llargués"
-    class="rounded-2xl shadow-lg w-full max-w-sm mx-auto object-cover"
-  />
+<section class="grid md:grid-cols-2 gap-10 items-center max-w-4xl mx-auto animate-on-scroll">
+  <div class="relative group">
+    <div class="absolute -inset-1 bg-gradient-to-r from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition duration-300"></div>
+    <img
+      src="/projects/foto-aboutme.jpg"
+      alt="Albert Llargués"
+      class="relative rounded-2xl shadow-lg w-full max-w-sm mx-auto object-cover"
+    />
+  </div>
 
-  <div>
-  <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-    I’m Albert, a junior developer based in Trondheim, originally from 
-    Barcelona. After more than 10 years working in transport and logistics, 
-    I decided to transition into software development driven by a long-standing 
-    interest in technology and problem-solving.
-  </p>
+  <div class="space-y-4">
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+      Soy Albert, desarrollador Full Stack con un fuerte enfoque en 
+      <strong class="text-primary-500">backend escalable</strong> y tecnologías de 
+      <strong class="text-accent-500">inteligencia artificial</strong>. 
+      Actualmente vivo en Trondheim, Noruega, aunque nací y crecí en Barcelona.
+    </p>
 
-  <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-    I’ve built several real-world web applications, working across both 
-    frontend and backend, with a growing focus on frontend development 
-    using React. I enjoy turning ideas into clean, usable interfaces and
-    connecting them to reliable APIs.
-  </p>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+      Tras más de 10 años trabajando en transporte y logística, 
+      decidí dar un giro a mi carrera hacia el desarrollo de software, 
+      impulsado por una pasión de largo recorrido por la tecnología.
+    </p>
 
-  <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-    My background in logistics and customs has given me strong professional 
-    maturity, ownership and attention to detail — qualities I now apply to 
-    writing maintainable code and collaborating in technical teams.
-  </p>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+      Tengo experiencia construyendo y desplegando aplicaciones full-stack con 
+      JavaScript (React, Node.js, Express) y Python para automatización e IA.
+    </p>
 
-  <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-    I enjoy building projects from scratch, learning by doing, and 
-    continuously improving my skills in modern web development.
-  </p>
-</div>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+      Mi trayectoria en logística y aduanas me ha dado una gran 
+      <strong class="text-primary-500">madurez profesional</strong>, 
+      capacidad de responsabilidad y atención al detalle — cualidades que ahora aplico 
+      para escribir código mantenible y colaborar en equipos técnicos.
+    </p>
 
+    <div class="flex flex-wrap gap-3 pt-2">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary-50 dark:bg-primary-950/50 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">
+        <span class="size-1.5 rounded-full bg-primary-500"></span>
+        JavaScript / TypeScript
+      </span>
+      <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-accent-50 dark:bg-accent-950/50 text-accent-700 dark:text-accent-300 rounded-full text-sm font-medium">
+        <span class="size-1.5 rounded-full bg-accent-500"></span>
+        Python / IA
+      </span>
+      <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-50 dark:bg-green-950/50 text-green-700 dark:text-green-300 rounded-full text-sm font-medium">
+        <span class="size-1.5 rounded-full bg-green-500"></span>
+        React / Astro
+      </span>
+    </div>
+  </div>
 </section>
-<style>
-  .perspective {
-    perspective: 1000px;
-  }
-
-  #card {
-    transform-style: preserve-3d;
-  }
-
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-
-  .rotate-y-180 {
-    transform: rotateY(180deg);
-  }
-
-  #card.is-flipped {
-    transform: rotateY(180deg);
-  }
-</style>

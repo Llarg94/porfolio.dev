@@ -1,95 +1,65 @@
 ---
-import { isTemplateSpan } from "typescript"
-
 const items = [
-    {
-        autor: "Noroff",
-        image:"./projects/noroff.png",
-        link: "https://www.noroff.no/",
-    },
-    {
-        autor: "IOC",
-        image:"./projects/ioc.png",
-        link: "https://ioc.xtec.cat/educacio/",
-    },
-    {
-  autor: "Midudev",
-  image:"./projects/midudev.jpg",
-  link: "https://midu.dev/",
-},
-    {
-  autor: "Aristidevs",
-  image:"./projects/aristidevs.png",
-  link: "https://www.youtube.com/c/aristidevs",
-},
-    {
-  autor: "Mouredev",
-  image:"./projects/mouredev.jpg",
-  link: "https://moure.dev/",
-},
-    {
-  autor: "freeCodeCamp.org",
-  image:"./projects/freecodecamp.png",
-  link: "https://moure.dev/",
-},
-    {
-  autor: "Sajjaad Khader",
-  image:"./projects/Sajjaad-Khader.jpg",
-  link: "https://swelaunchpad.com/",
-},
-    {
-  autor: "Full Stack Open Course",
-  image:"./projects/fullstackopen.png",
-  link: "https://fullstackopen.com/",
-},
+  { autor: "Noroff", image: "./projects/noroff.png", link: "https://www.noroff.no/" },
+  { autor: "IOC", image: "./projects/ioc.png", link: "https://ioc.xtec.cat/educacio/" },
+  { autor: "Midudev", image: "./projects/midudev.jpg", link: "https://midu.dev/" },
+  { autor: "Aristidevs", image: "./projects/aristidevs.png", link: "https://www.youtube.com/c/aristidevs" },
+  { autor: "Mouredev", image: "./projects/mouredev.jpg", link: "https://moure.dev/" },
+  { autor: "freeCodeCamp.org", image: "./projects/freecodecamp.png", link: "https://www.freecodecamp.org/" },
+  { autor: "Sajjaad Khader", image: "./projects/Sajjaad-Khader.jpg", link: "https://swelaunchpad.com/" },
+  { autor: "Full Stack Open", image: "./projects/fullstackopen.png", link: "https://fullstackopen.com/" },
 ]
-const programadores = [...items, ...items]; //duplicate for infinite scroll
+const duplicated = [...items, ...items];
 ---
 
-<div class="carrusel-container overflow-hidden relative w-full">
-  <h3 class="text-lg font-semibold text-white mb-4">From where I've been learning</h3>
+<div class="animate-on-scroll">
+  <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+    Plataformas y mentores que han sido clave en mi formación como desarrollador.
+  </p>
 
-  <div class="relative">
-    <div id="carousel-container" class="flex animate-scroll space-x-6 w-max">
-      {programadores.map((programador) => (
-        <a 
-          href={programador.link}
+  <div class="overflow-hidden relative w-full">
+    <div class="flex animate-scroll gap-6 w-max">
+      {duplicated.map((item) => (
+        <a
+          href={item.link}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex-shrink-0 w-40 text-center"
-          title={programador.autor}
+          class="flex-shrink-0 w-36 text-center group"
+          title={item.autor}
         >
-          <img 
-            src={programador.image} 
-            alt={programador.autor}
-            class="w-40 h-40 object-cover rounded-xl shadow-lg"
-          />
-          <p class="mt-2 text-sm text-white">{programador.autor}</p>
+          <div class="overflow-hidden rounded-xl shadow-md">
+            <img
+              src={item.image}
+              alt={item.autor}
+              class="w-36 h-36 object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+            />
+          </div>
+          <p class="mt-2 text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary-500 transition-colors">
+            {item.autor}
+          </p>
         </a>
       ))}
     </div>
 
-    <!-- Overlays para el difuminado -->
-    <div 
-      class="pointer-events-none absolute inset-y-0 left-0 w-20 z-20"
-      style="background: linear-gradient(to right, #060c17, transparent);"
-    />
-    <div 
-      class="pointer-events-none absolute inset-y-0 right-0 w-20 z-20"
-      style="background: linear-gradient(to left, #060c17, transparent);"
-    />
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-gray-50 to-transparent dark:from-gray-950 dark:to-transparent z-10" />
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-gray-50 to-transparent dark:from-gray-950 dark:to-transparent z-10" />
   </div>
 </div>
 
 <style>
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* -50% porque duplicamos el contenido */
+  100% { transform: translateX(-50%); }
 }
 
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 40s linear infinite;
   will-change: transform;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
 }
 </style>
 

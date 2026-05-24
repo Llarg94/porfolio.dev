@@ -1,0 +1,111 @@
+---
+import GitHubIcon from "../icons/GitHub.astro"
+import LinkedInIcon from "../icons/LinkedIn.astro"
+import GmailIcon from "../icons/Gmail.astro"
+import SocialPill from "./SocialPill.astro"
+---
+
+<div class="animate-on-scroll">
+  <div class="grid md:grid-cols-2 gap-10 max-w-3xl mx-auto">
+    <div class="space-y-6">
+      <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+        ¿Tienes un proyecto en mente, una oportunidad laboral o simplemente quieres conectar?
+        Estoy siempre abierto a nuevos retos y colaboraciones.
+      </p>
+
+      <div class="space-y-4">
+        <div class="flex items-center gap-4">
+          <div class="size-10 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-400">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-gray-900 dark:text-white">Email</p>
+            <a href="mailto:albertllarg1@gmail.com" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors">
+              albertllarg1@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="size-10 rounded-xl bg-accent-100 dark:bg-accent-900/50 flex items-center justify-center text-accent-600 dark:text-accent-400">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-gray-900 dark:text-white">Ubicación</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Trondheim, Noruega</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 pt-2">
+        <SocialPill href="https://www.linkedin.com/in/albert-llargues">
+          <LinkedInIcon class="size-4" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://www.github.com/Llarg94">
+          <GitHubIcon class="size-4" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="mailto:albertllarg1@gmail.com">
+          <GmailIcon class="size-4" />
+          Email
+        </SocialPill>
+      </div>
+    </div>
+
+    <div class="bg-white dark:bg-gray-900/50 rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50">
+      <form action="https://formspree.io/f/xdkodknr" method="POST" class="space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            Nombre
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Tu nombre"
+            class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition text-sm"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="tu@email.com"
+            class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition text-sm"
+          />
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            Mensaje
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="4"
+            placeholder="Cuéntame sobre tu proyecto..."
+            class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition text-sm resize-none"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="w-full px-6 py-2.5 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-primary-500/25 text-sm"
+        >
+          Enviar mensaje
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

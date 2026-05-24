@@ -4,59 +4,94 @@ import Badge from "../components/Badge.astro"
 import LinkedInIcon from "../icons/LinkedIn.astro"
 import SocialPill from "../components/SocialPill.astro"
 import CV from "../icons/CV.astro"
-import Sknadstekst from "../icons/Søknadstekst.astro"
 import GitHubIcon from "../icons/GitHub.astro"
 import GmailIcon from "../icons/Gmail.astro"
 ---
 
-<div class="">
-  <div class="flex gap-4 mb-4">
-    <img
-      class="rounded-full shadow-lg size-20"
-      src="/projects/albs-foto.webp"
-      alt={personalImageAlt}
-    />
+<div class="max-w-3xl animate-fade-in">
+  <div class="flex items-center gap-4 mb-6">
+    <div class="relative group">
+      <div class="absolute -inset-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+      <img
+        class="relative rounded-full size-20 object-cover"
+        src="/projects/albs-foto.webp"
+        alt={personalImageAlt}
+      />
+    </div>
     <a
       href="https://www.linkedin.com/in/albert-llargues"
       target="_blank"
       rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105"
+      class="flex items-center transition hover:scale-105"
     >
-        <Badge>Ready to work</Badge>
+      <Badge>Abierto a oportunidades</Badge>
     </a>
   </div>
-  <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-  >
-    Hello, my name is Albert Llargués
-  </h1>
-  <p class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-green-400 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300">
-  👨🏼 Junior developer building <strong>web & app solutions </strong> 
-  <br>
-  🚩 Based in Trondheim, <strong>Norway</strong> 
-</p>
- 
 
-  <nav class="flex flex-wrap gap-4 mt-8">
+  <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
+    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-accent-500">
+      Albert Llargués
+    </span>
+  </h1>
+
+  <div class="mt-4 text-xl sm:text-2xl text-gray-700 dark:text-gray-300">
+    <span id="typed-text"></span>
+    <span class="animate-pulse text-primary-500">|</span>
+  </div>
+
+  <p class="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl">
+    Desarrollador Full Stack con enfoque en <strong class="text-primary-500 dark:text-primary-400">backend escalable</strong> e 
+    <strong class="text-accent-500 dark:text-accent-400">integración de IA</strong>. 
+    Transformo ideas en soluciones digitales inteligentes. Actualmente en Trondheim, Noruega.
+  </p>
+
+  <div class="flex flex-wrap gap-3 mt-8">
     <SocialPill href="https://www.linkedin.com/in/albert-llargues">
-        <LinkedInIcon class="size-4 lg:size-6"/>
-        LinkedIn
+      <LinkedInIcon class="size-4 lg:size-5" />
+      LinkedIn
     </SocialPill>
     <SocialPill href="https://www.github.com/Llarg94">
-        <GitHubIcon class="size-4 lg:size-6"/>
-        GitHub 
+      <GitHubIcon class="size-4 lg:size-5" />
+      GitHub
     </SocialPill>
     <SocialPill href="mailto:albertllarg1@gmail.com">
-        <GmailIcon class="size-4 lg:size-6"/>
-        albertllarg1@gmail.com
+      <GmailIcon class="size-4 lg:size-5" />
+      Email
     </SocialPill>
-    <SocialPill href="./projects/CV - Albert Llargues.pdf">
-        <CV class="size-4 lg:size-6"/>
-        CV
+    <SocialPill href="/projects/CV%20-%20Albert%20Llargues.pdf" download>
+      <CV class="size-4 lg:size-5" />
+      Descargar CV
     </SocialPill>
-    <!-- <SocialPill href="/projects/MOTIVATION-LETTER.pdf">
-        <Sknadstekst class="size-4 lg:size-6"/>
-        Søknadstekst
-    </SocialPill> -->
-  </nav>
+  </div>
+
+  <div class="mt-12 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500">
+    <span class="relative flex size-2">
+      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+      <span class="relative inline-flex size-2 rounded-full bg-green-500"></span>
+    </span>
+    Disponible para nuevos proyectos
+  </div>
 </div>
+
+<script>
+  import TypeIt from "typeit";
+
+  document.addEventListener("astro:page-load", () => {
+    const target = document.getElementById("typed-text");
+    if (!target) return;
+
+    new TypeIt(target, {
+      strings: [
+        "Desarrollador Full Stack",
+        "Creador de apps Android",
+        "Entusiasta de la IA",
+        "Ingeniero de software",
+      ],
+      speed: 80,
+      deleteSpeed: 50,
+      loop: true,
+      breakLines: false,
+      cursor: false,
+    }).go();
+  });
+</script>
