@@ -1,19 +1,20 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
-import type { ExperienceItem as ExperienceItemType } from "../i18n/translations"
+import type { ExperienceItem as ExperienceItemType, Locale } from "../i18n/translations"
 
 export interface Props {
   experiences: ExperienceItemType[]
+  locale: Locale
 }
 
-const { experiences } = Astro.props
+const { experiences, locale } = Astro.props
 ---
 
 <ol class="relative mt-8">
   {
     experiences.map((experience) => (
       <li>
-        <ExperienceItem {...experience} />
+        <ExperienceItem {...experience} locale={locale} />
       </li>
     ))
   }

@@ -26,6 +26,7 @@ export interface HeroContent {
 }
 
 export interface AboutContent {
+  subtitle: string
   p1: string
   p2: string
   p3: string
@@ -96,6 +97,7 @@ export interface Translations {
     formPlaceholderMessage: string
   }
   footer: string
+  knowMore: string
 }
 
 const es: Translations = {
@@ -125,6 +127,7 @@ const es: Translations = {
     available: "Disponible para nuevos proyectos",
   },
   about: {
+    subtitle: "De la logística al código, una trayectoria de evolución constante.",
     p1: "Soy Albert, desarrollador Full Stack con un fuerte enfoque en backend escalable y tecnologías de inteligencia artificial. Actualmente vivo en Trondheim, Noruega, aunque nací y crecí en Barcelona.",
     p2: "Tras más de 10 años trabajando en transporte y logística, decidí dar un giro a mi carrera hacia el desarrollo de software, impulsado por una pasión de largo recorrido por la tecnología.",
     p3: "Tengo experiencia construyendo y desplegando aplicaciones full-stack con JavaScript (React, Node.js, Express) y Python para automatización e IA.",
@@ -183,14 +186,27 @@ const es: Translations = {
       short: "Videojuego arcade shooter con LibGDX y Kotlin.",
       description: "Videojuego 2D desarrollado con LibGDX y Kotlin en Android Studio.\n    • Jugabilidad 2D con colisiones, movimiento y disparos\n    • Música de fondo y efectos de sonido\n    • UI sencilla y pulida\n    • Desafíos por niveles",
     },
+    {
+      title: "HYROX Tracker",
+      short: "App completa para atletas HYROX con entrenamiento, nutrición y rendimiento.",
+      description: "Aplicación web diseñada específicamente para atletas de HYROX, la competición global de fitness.\n    • Seguimiento de entrenamientos con métricas detalladas\n    • Planificación de comidas y nutrición personalizada\n    • Dashboard de rendimiento con gráficos interactivos\n    • Leaderboard global y comparativa con otros atletas\n    • Autenticación con Supabase y pasarela de pago Stripe\n    • Diseño responsive con modo oscuro",
+    },
   ],
   experiences: [
     {
-      date: "Actualidad",
+      date: "Marzo 2026 - Actualidad",
+      title: "Coordinador de Almacén",
+      company: "Autronica Fire and Security AS",
+      description:
+        "Coordinación de envíos internacionales y gestión de comunicaciones con líderes de proyecto. Supervisión de la preservación de materiales, control de calidad mediante fotografía de producto y preparación de documentación de exportación.",
+      link: "https://www.autronicafire.com/en/",
+    },
+    {
+      date: "Mayo 2024 - Marzo 2026",
       title: "Almacenero",
       company: "Autronica Fire and Security AS",
       description:
-        "Preparación de pedidos nacionales e internacionales en el almacén, empaquetado, etiquetado y preparación para su transporte.",
+        "Preparación de pedidos nacionales e internacionales, empaquetado, etiquetado y preparación para transporte. Conservación y mantenimiento de materiales, fotografía de producto para control de calidad y apoyo en la comunicación con líderes de proyecto para coordinar envíos especializados.",
       link: "https://www.autronicafire.com/en/",
     },
     {
@@ -228,6 +244,7 @@ const es: Translations = {
     formPlaceholderMessage: "Cuéntame sobre tu proyecto...",
   },
   footer: "Todos los derechos reservados.",
+  knowMore: "Saber más",
 }
 
 const ca: Translations = {
@@ -257,6 +274,7 @@ const ca: Translations = {
     available: "Disponible per a nous projectes",
   },
   about: {
+    subtitle: "De la logística al codi, una trajectòria d'evolució constant.",
     p1: "Soc Albert, desenvolupador Full Stack amb un fort enfocament en backend escalable i tecnologies d'intel·ligència artificial. Actualment visc a Trondheim, Noruega, tot i que vaig néixer i em vaig criar a Barcelona.",
     p2: "Després de més de 10 anys treballant en transport i logística, vaig decidir fer un gir a la meva carrera cap al desenvolupament de programari, impulsat per una passió de llarg recorregut per la tecnologia.",
     p3: "Tinc experiència construint i desplegant aplicacions full-stack amb JavaScript (React, Node.js, Express) i Python per a automatització i IA.",
@@ -315,14 +333,27 @@ const ca: Translations = {
       short: "Videojoc arcade shooter amb LibGDX i Kotlin.",
       description: "Videojoc 2D desenvolupat amb LibGDX i Kotlin a Android Studio.\n    • Jugabilitat 2D amb col·lisions, moviment i trets\n    • Música de fons i efectes de so\n    • UI senzilla i polida\n    • Reptes per nivells",
     },
+    {
+      title: "HYROX Tracker",
+      short: "App completa per a atletes HYROX amb entrenament, nutrició i rendiment.",
+      description: "Aplicació web dissenyada específicament per a atletes de HYROX, la competició global de fitness.\n    • Seguiment d'entrenaments amb mètriques detallades\n    • Planificació de menjars i nutrició personalitzada\n    • Dashboard de rendiment amb gràfics interactius\n    • Leaderboard global i comparativa amb altres atletes\n    • Autenticació amb Supabase i passarel·la de pagament Stripe\n    • Disseny responsive amb mode fosc",
+    },
   ],
   experiences: [
     {
-      date: "Actualitat",
+      date: "Març 2026 - Actualitat",
+      title: "Coordinador de Magatzem",
+      company: "Autronica Fire and Security AS",
+      description:
+        "Coordinació d'enviaments internacionals i gestió de comunicacions amb líders de projecte. Supervisió de la preservació de materials, control de qualitat mitjançant fotografia de producte i preparació de documentació d'exportació.",
+      link: "https://www.autronicafire.com/en/",
+    },
+    {
+      date: "Maig 2024 - Març 2026",
       title: "Magatzemer",
       company: "Autronica Fire and Security AS",
       description:
-        "Preparació de comandes nacionals i internacionals al magatzem, empaquetatge, etiquetatge i preparació per al seu transport.",
+        "Preparació de comandes nacionals i internacionals, empaquetatge, etiquetatge i preparació per al transport. Conservació i manteniment de materials, fotografia de producte per a control de qualitat i suport en la comunicació amb líders de projecte per coordinar enviaments especialitzats.",
       link: "https://www.autronicafire.com/en/",
     },
     {
@@ -360,6 +391,7 @@ const ca: Translations = {
     formPlaceholderMessage: "Explica'm sobre el teu projecte...",
   },
   footer: "Tots els drets reservats.",
+  knowMore: "Saber-ne més",
 }
 
 const en: Translations = {
@@ -389,6 +421,7 @@ const en: Translations = {
     available: "Available for new projects",
   },
   about: {
+    subtitle: "From logistics to code, a journey of constant evolution.",
     p1: "I'm Albert, a Full Stack Developer with a strong focus on scalable backend and artificial intelligence technologies. I currently live in Trondheim, Norway, although I was born and raised in Barcelona.",
     p2: "After more than 10 years working in transport and logistics, I decided to pivot my career into software development, driven by a long-standing passion for technology.",
     p3: "I have experience building and deploying full-stack applications with JavaScript (React, Node.js, Express) and Python for automation and AI.",
@@ -447,14 +480,27 @@ const en: Translations = {
       short: "Arcade shooter game built with LibGDX and Kotlin.",
       description: "2D game developed with LibGDX and Kotlin in Android Studio.\n    • 2D gameplay with collisions, movement, and shooting\n    • Background music and SFX\n    • Clean, polished UI\n    • Level-based challenges",
     },
+    {
+      title: "HYROX Tracker",
+      short: "Complete HYROX athlete app with training, nutrition, and performance tracking.",
+      description: "A web application built specifically for HYROX athletes, the global fitness competition.\n    • Workout tracking with detailed metrics\n    • Meal planning and personalized nutrition\n    • Performance dashboard with interactive charts\n    • Global leaderboard and athlete comparison\n    • Supabase authentication and Stripe payment integration\n    • Responsive design with dark mode",
+    },
   ],
   experiences: [
     {
-      date: "Current",
+      date: "March 2026 - Present",
+      title: "Warehouse Coordinator",
+      company: "Autronica Fire and Security AS",
+      description:
+        "Coordinating international shipments and managing communications with project leaders. Overseeing material preservation, quality control through product photography, and preparing export documentation.",
+      link: "https://www.autronicafire.com/en/",
+    },
+    {
+      date: "May 2024 - March 2026",
       title: "Warehouse Operative",
       company: "Autronica Fire and Security AS",
       description:
-        "Preparing national and international orders in the warehouse, packaging, labeling, and preparing them for transport.",
+        "Preparing national and international orders, packaging, labeling, and dispatch coordination. Performed material preservation and maintenance, product photography for quality control, and supported communication with project leaders to coordinate specialized shipments.",
       link: "https://www.autronicafire.com/en/",
     },
     {
@@ -492,6 +538,7 @@ const en: Translations = {
     formPlaceholderMessage: "Tell me about your project...",
   },
   footer: "All rights reserved.",
+  knowMore: "Learn more",
 }
 
 const no: Translations = {
@@ -521,7 +568,8 @@ const no: Translations = {
     available: "Tilgjengelig for nye prosjekter",
   },
   about: {
-    p1: "Jeg heter Albert, en Full Stack-utvikler med sterkt fokus på skalerbar backend og kunstig intelligens. J bor for tiden i Trondheim, Norge, men er født og oppvokst i Barcelona.",
+    subtitle: "Fra logistikk til kode, en reise i konstant utvikling.",
+    p1: "Jeg heter Albert, en Full Stack-utvikler med sterkt fokus på skalerbar backend og kunstig intelligens. Jeg bor for tiden i Trondheim, Norge, men er født og oppvokst i Barcelona.",
     p2: "Etter mer enn 10 år innen transport og logistikk, bestemte jeg meg for å bytte karriere til programvareutvikling, drevet av en langvarig lidenskap for teknologi.",
     p3: "Jeg har erfaring med å bygge og driftsette full-stack-applikasjoner med JavaScript (React, Node.js, Express) og Python for automatisering og AI.",
     p4: "Bakgrunnen min fra logistikk og toll har gitt meg stor profesjonell modenhet, ansvarsfølelse og oppmerksomhet på detaljer — egenskaper jeg nå bruker for å skrive vedlikeholdbar kode og samarbeide i tekniske team.",
@@ -579,14 +627,27 @@ const no: Translations = {
       short: "Arkadespill bygget med LibGDX og Kotlin.",
       description: "2D-spill utviklet med LibGDX og Kotlin i Android Studio.\n    • 2D-spill med kollisjoner, bevegelse og skyting\n    • Bakgrunnsmusikk og lydeffekter\n    • Rent og polert grensesnitt\n    • Nivåbaserte utfordringer",
     },
+    {
+      title: "HYROX Tracker",
+      short: "Komplett HYROX-app for trening, ernæring og ytelsesanalyse.",
+      description: "En webapplikasjon bygget spesifikt for HYROX-utøvere, den globale fitnesskonkurransen.\n    • Treningslogging med detaljerte målinger\n    • Måltidsplanlegging og personlig tilpasset ernæring\n    • Ytelsesdashboard med interaktive diagrammer\n    • Global ledertavle og sammenligning med andre utøvere\n    • Supabase-autentisering og Stripe-betaling\n    • Responsivt design med mørk modus",
+    },
   ],
   experiences: [
     {
-      date: "Nåværende",
+      date: "Mars 2026 - Nåværende",
+      title: "Lagerkoordinator",
+      company: "Autronica Fire and Security AS",
+      description:
+        "Koordinering av internasjonale forsendelser og kommunikasjon med prosjektledere. Tilsyn med materialkonservering, kvalitetskontroll gjennom produktfotografering og klargjøring av eksportdokumentasjon.",
+      link: "https://www.autronicafire.com/en/",
+    },
+    {
+      date: "Mai 2024 - Mars 2026",
       title: "Lagermedarbeider",
       company: "Autronica Fire and Security AS",
       description:
-        "Forberedelse av nasjonale og internasjonale ordre på lageret, pakking, merking og klargjøring for transport.",
+        "Forberedelse av nasjonale og internasjonale ordre, pakking, merking og klargjøring for transport. Konservering og vedlikehold av materialer, produktfotografering for kvalitetskontroll og støtte i kommunikasjon med prosjektledere for å koordinere spesialiserte forsendelser.",
       link: "https://www.autronicafire.com/en/",
     },
     {
@@ -624,6 +685,7 @@ const no: Translations = {
     formPlaceholderMessage: "Fortell meg om prosjektet ditt...",
   },
   footer: "Alle rettigheter forbeholdt.",
+  knowMore: "Les mer",
 }
 
 export const translations: Record<Locale, Translations> = { es, ca, en, no }

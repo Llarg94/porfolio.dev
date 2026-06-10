@@ -34,7 +34,7 @@ const { t, lang } = Astro.props
         <TitleSection>
           <span class="text-primary-500">✦</span> {t.sections.about}
         </TitleSection>
-        <AboutMe t={t.about} />
+        <AboutMe t={t.about} sectionTitle={t.sections.about} />
       </SectionContainer>
 
       <SectionContainer id={t.nav[2].label}>
@@ -55,7 +55,7 @@ const { t, lang } = Astro.props
         <TitleSection>
           <span class="text-primary-500">✦</span> {t.sections.experience}
         </TitleSection>
-        <Experience experiences={t.experiences} />
+        <Experience experiences={t.experiences} locale={lang} />
       </SectionContainer>
 
       <SectionContainer id="formacion">
